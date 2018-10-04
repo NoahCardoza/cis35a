@@ -17,7 +17,7 @@ public class Main {
 		}
 		return input;
 	}
-	
+
 	public static double getPositiveDouble(Scanner in, String message) {
 		double input;
 
@@ -33,15 +33,21 @@ public class Main {
 		}
 		return input;
 	}
-	
-	
+
+
 
 	public static int getPositiveInt(Scanner in, String message) {
 		int input;
 
 		while (true) {
 			System.out.print(message);
-			input = in.nextInt();
+			try {
+				input = in.nextInt();
+			} catch(java.util.InputMismatchException e) {
+				System.out.println("This input must be an integer");
+				in.next(); // used to flush out the scanner? 
+				continue;
+			}
 
 			if (input > 0)
 				break;
@@ -84,7 +90,7 @@ public class Main {
 		}
 
 	}
-	
+
 	public static boolean loanAmountTester(double input) {
 		return input >= 1;
 	}
