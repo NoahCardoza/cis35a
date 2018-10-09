@@ -1,0 +1,82 @@
+* Testing: Person Class ->
+
+Name: Bill Nye
+Age: 62
+Phone Number: +013 (123) 456-7890
+Address: 987 Endless Ln.
+Person<name="Bill Nye", age=62, phoneNumber="0131234567890", address="987 Endless Ln.">
+Name: Bob Ross
+Age: 76
+Phone Number: 1-123-123-1234#12
+Address: 1234 Deadend Rd.
+Person<name="Bob Ross", age=76, phoneNumber="1123123123412", address="1234 Deadend Rd.">
+Name: Tony Stark
+Age: 53
+Phone Number: 11231231234
+Address: 1234 Iron Ct.
+Person<name="Tony Stark", age=53, phoneNumber="11231231234", address="1234 Iron Ct.">
+
+----------------------------------------------------------------
+
+* Testing: Invalid Name ->
+
+Name: 
+Exception in thread "main" java.lang.RuntimeException: A name must be at least one character long
+	at Person.setName(Person.java:34)
+	at Main.personFromScanner(Main.java:18)
+	at Main.lambda$0(Main.java:26)
+	at java.util.stream.IntPipeline$4$1.accept(IntPipeline.java:250)
+	at java.util.stream.Streams$RangeIntSpliterator.forEachRemaining(Streams.java:110)
+	at java.util.Spliterator$OfInt.forEachRemaining(Spliterator.java:693)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:418)
+	at Main.main(Main.java:28)
+
+----------------------------------------------------------------
+
+* Testing: Invalid Age ->
+
+Name: John Doe
+Age: -3
+Exception in thread "main" java.lang.RuntimeException: Age must be an integer greater than 0
+	at Person.setAge(Person.java:69)
+	at Main.personFromScanner(Main.java:19)
+	at Main.lambda$0(Main.java:26)
+	at java.util.stream.IntPipeline$4$1.accept(IntPipeline.java:250)
+	at java.util.stream.Streams$RangeIntSpliterator.forEachRemaining(Streams.java:110)
+	at java.util.Spliterator$OfInt.forEachRemaining(Spliterator.java:693)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:418)
+	at Main.main(Main.java:28)
+
+----------------------------------------------------------------
+
+* Testing: Invalid Phone Number ->
+
+Name: John Doe
+Age: 24
+Phone Number: 1337
+Exception in thread "main" java.lang.RuntimeException: 1337 is an invalid phone number
+	at Person.setPhoneNumber(Person.java:57)
+	at Main.personFromScanner(Main.java:20)
+	at Main.lambda$0(Main.java:26)
+	at java.util.stream.IntPipeline$4$1.accept(IntPipeline.java:250)
+	at java.util.stream.Streams$RangeIntSpliterator.forEachRemaining(Streams.java:110)
+	at java.util.Spliterator$OfInt.forEachRemaining(Spliterator.java:693)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:418)
+	at Main.main(Main.java:28)
+	
+----------------------------------------------------------------
