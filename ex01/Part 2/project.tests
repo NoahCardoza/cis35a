@@ -1,0 +1,81 @@
+* Testing: Output #1 ->
+
+01 – heads
+02 – tails
+03 – tails
+04 – heads
+05 – heads
+06 – tails
+07 – tails
+08 – tails
+09 – tails
+10 – heads
+11 – heads
+12 – tails
+13 – tails
+14 – tails
+15 – tails
+16 – tails
+17 – heads
+18 – heads
+19 – heads
+20 – tails
+
+After flipping the coin the 20 times, it landed heads 8 times and tails 12 times.
+
+----------------------------------------------------------------
+
+* Testing: Output #2 ->
+
+01 – tails
+02 – heads
+03 – heads
+04 – tails
+05 – tails
+06 – heads
+07 – tails
+08 – tails
+09 – tails
+10 – heads
+11 – tails
+12 – heads
+13 – heads
+14 – heads
+15 – heads
+16 – tails
+17 – heads
+18 – tails
+19 – heads
+20 – heads
+
+After flipping the coin the 20 times, it landed heads 11 times and tails 9 times.
+
+----------------------------------------------------------------
+
+* Testing: Output #1 ->
+
+01 – tails
+02 – heads
+03 – heads
+04 – tails
+05 – heads
+06 – tails
+07 – tails
+08 – heads
+09 – heads
+10 – heads
+11 – heads
+12 – tails
+13 – heads
+14 – heads
+15 – heads
+16 – heads
+17 – heads
+18 – heads
+19 – tails
+20 – heads
+
+After flipping the coin the 20 times, it landed heads 14 times and tails 6 times.
+
+
+----------------------------------------------------------------
