@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public class UI {
-	boolean DEBUG = true;
+	boolean DEBUG = false;
 	
 	public interface Helpers {
 		void invoke(Store store);
@@ -39,7 +39,7 @@ public class UI {
 	public static int askForInt(String q) {
 		String input;
 		while (true) {
-			System.out.print(q + ": ");
+			System.out.print(q + ":\n> ");
 			input = stdin.nextLine();
 			try {
 				return Integer.parseInt(input);
@@ -55,7 +55,7 @@ public class UI {
 	public static int askForIntBetween(String q, int min, int max) {
 		int n;
 
-		q += " " + String.format("<%d..%d>", min, max);
+		q += " " + String.format("[Integer <%d..%d>]", min, max);
 		while (true) {
 			n = askForInt(q);
 			if (min <= n && n <= max)
@@ -95,7 +95,7 @@ public class UI {
 	
 		while (true) {
 			System.out.println("Which store would you like to analyze?");
-			selectedStoreIndex = askForIntBetween(String.format("Select a store by number or enter %d to terminate the program", numberOfStores + 1), 1, numberOfStores + 1);
+			selectedStoreIndex = askForIntBetween(String.format("Select a store by number (1 through %d) or enter %d to terminate the program", numberOfStores, numberOfStores + 1), 1, numberOfStores + 1);
 			if (selectedStoreIndex > numberOfStores)
 				return;
 			selectedStore = franchise.getStores(selectedStoreIndex - 1);

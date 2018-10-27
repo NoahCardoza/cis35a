@@ -1,0 +1,206 @@
+
+* Testing: Invalid inputs ->
+
+Welcome to the Franchise Manager App
+We have data for 6 stores for last 6 weeks.
+Which store would you like to analyze?
+Select a store by number (1 through 6) or enter 7 to terminate the program [Integer <1..7>]:
+> -4
+-4 is not inclusively between 1 and 7
+Select a store by number (1 through 6) or enter 7 to terminate the program [Integer <1..7>]:
+> feds
+"feds" is not a valid integer.
+Select a store by number (1 through 6) or enter 7 to terminate the program [Integer <1..7>]:
+> 074hfj
+"074hfj" is not a valid integer.
+Select a store by number (1 through 6) or enter 7 to terminate the program [Integer <1..7>]:
+> 3874598628965982376589724352
+"3874598628965982376589724352" is not a valid integer.
+Select a store by number (1 through 6) or enter 7 to terminate the program [Integer <1..7>]:
+> 7
+
+::
+----------------------------------------------------------------
+
+* Testing: The Store::print method ->
+
+Store<totalSalesPerWeek=[3283.60, 4123.00, 4975.60, 5828.20, 6680.80], averageSalesPerWeek=[3283.60, 4123.00, 4975.60, 5828.20, 6680.80], totalSalesForAllWeeks=24889.00, averageWeeklySales=3555.93, weekWithHighestSales=4, weekWithLowestSales=0>
+Store<totalSalesPerWeek=[2583.60, 3423.00, 4275.60, 5128.20, 5980.80], averageSalesPerWeek=[2583.60, 3423.00, 4275.60, 5128.20, 5980.80], totalSalesForAllWeeks=21389.00, averageWeeklySales=3055.93, weekWithHighestSales=4, weekWithLowestSales=0>
+Store<totalSalesPerWeek=[3983.60, 4823.00, 5675.60, 6528.20, 7380.80], averageSalesPerWeek=[3983.60, 4823.00, 5675.60, 6528.20, 7380.80], totalSalesForAllWeeks=28389.00, averageWeeklySales=4055.93, weekWithHighestSales=4, weekWithLowestSales=0>
+Store<totalSalesPerWeek=[4713.40, 5552.40, 6405.00, 7257.60, 8110.20], averageSalesPerWeek=[4713.40, 5552.40, 6405.00, 7257.60, 8110.20], totalSalesForAllWeeks=32037.00, averageWeeklySales=4577.91, weekWithHighestSales=4, weekWithLowestSales=0>
+Store<totalSalesPerWeek=[3291.00, 4130.00, 4982.60, 5835.20, 6687.80], averageSalesPerWeek=[3291.00, 4130.00, 4982.60, 5835.20, 6687.80], totalSalesForAllWeeks=24925.00, averageWeeklySales=3561.58, weekWithHighestSales=4, weekWithLowestSales=0>
+Store<totalSalesPerWeek=[5381.20, 6220.20, 7072.80, 7925.40, 8778.00], averageSalesPerWeek=[5381.20, 6220.20, 7072.80, 7925.40, 8778.00], totalSalesForAllWeeks=35376.00, averageWeeklySales=5054.92, weekWithHighestSales=4, weekWithLowestSales=0>
+Welcome to the Franchise Manager App
+We have data for 6 stores for last 6 weeks.
+Which store would you like to analyze?
+Select a store by number (1 through 6) or enter 7 to terminate the program [Integer <1..7>]:
+> 7
+
+----------------------------------------------------------------
+
+* Testing: Entering store options and returning to the main menu ->
+
+Welcome to the Franchise Manager App
+We have data for 6 stores for last 6 weeks.
+Which store would you like to analyze?
+Select a store by number (1 through 6) or enter 7 to terminate the program [Integer <1..7>]:
+> 1
+---------
+Viewing store 1
+---------
+Operations:
+1. Enter 1 for total sales for each week
+2. Enter 2 for average daily sales for each week
+3. Enter 3 for total sales for all weeks
+4. Enter 4 for average weekly sales
+5. Enter 5 for week with the highest amount in sales.
+6. Enter 6 for week with the lowest amount in sales.
+7. Enter 7 for all analytical data. (1 through 6)
+8. Enter 8 to exit to the main menu.
+Select a operation by number [Integer <1..8>]:
+> 8
+---------
+| Exited to main menu
+---------
+Which store would you like to analyze?
+Select a store by number (1 through 6) or enter 7 to terminate the program [Integer <1..7>]:
+> 7
+
+----------------------------------------------------------------
+
+* Testing: Each UI store operation ->
+
+Welcome to the Franchise Manager App
+We have data for 6 stores for last 6 weeks.
+Which store would you like to analyze?
+Select a store by number (1 through 6) or enter 7 to terminate the program [Integer <1..7>]:
+> 1
+---------
+Viewing store 1
+---------
+Operations:
+1. Enter 1 for total sales for each week
+2. Enter 2 for average daily sales for each week
+3. Enter 3 for total sales for all weeks
+4. Enter 4 for average weekly sales
+5. Enter 5 for week with the highest amount in sales.
+6. Enter 6 for week with the lowest amount in sales.
+7. Enter 7 for all analytical data. (1 through 6)
+8. Enter 8 to exit to the main menu.
+Select a operation by number [Integer <1..8>]:
+> 1
+---------
+| Total sales per week ::
+| Week 01 - $3283.60    | Week 02 - $4123.00    | Week 03 - $4975.60    | Week 04 - $5828.20    | Week 05 - $6680.80
+---------
+Operations:
+1. Enter 1 for total sales for each week
+2. Enter 2 for average daily sales for each week
+3. Enter 3 for total sales for all weeks
+4. Enter 4 for average weekly sales
+5. Enter 5 for week with the highest amount in sales.
+6. Enter 6 for week with the lowest amount in sales.
+7. Enter 7 for all analytical data. (1 through 6)
+8. Enter 8 to exit to the main menu.
+Select a operation by number [Integer <1..8>]:
+> 2
+---------
+| Average sales per week ::
+| Week 01 - $3283.60    | Week 02 - $4123.00    | Week 03 - $4975.60    | Week 04 - $5828.20    | Week 05 - $6680.80
+---------
+Operations:
+1. Enter 1 for total sales for each week
+2. Enter 2 for average daily sales for each week
+3. Enter 3 for total sales for all weeks
+4. Enter 4 for average weekly sales
+5. Enter 5 for week with the highest amount in sales.
+6. Enter 6 for week with the lowest amount in sales.
+7. Enter 7 for all analytical data. (1 through 6)
+8. Enter 8 to exit to the main menu.
+Select a operation by number [Integer <1..8>]:
+> 3
+---------
+| Total revenue: $24889.00
+---------
+Operations:
+1. Enter 1 for total sales for each week
+2. Enter 2 for average daily sales for each week
+3. Enter 3 for total sales for all weeks
+4. Enter 4 for average weekly sales
+5. Enter 5 for week with the highest amount in sales.
+6. Enter 6 for week with the lowest amount in sales.
+7. Enter 7 for all analytical data. (1 through 6)
+8. Enter 8 to exit to the main menu.
+Select a operation by number [Integer <1..8>]:
+> 4
+---------
+| Average revenue per week: $3555.93
+---------
+Operations:
+1. Enter 1 for total sales for each week
+2. Enter 2 for average daily sales for each week
+3. Enter 3 for total sales for all weeks
+4. Enter 4 for average weekly sales
+5. Enter 5 for week with the highest amount in sales.
+6. Enter 6 for week with the lowest amount in sales.
+7. Enter 7 for all analytical data. (1 through 6)
+8. Enter 8 to exit to the main menu.
+Select a operation by number [Integer <1..8>]:
+> 5
+---------
+| The week with the most sales was:	Week 05
+---------
+Operations:
+1. Enter 1 for total sales for each week
+2. Enter 2 for average daily sales for each week
+3. Enter 3 for total sales for all weeks
+4. Enter 4 for average weekly sales
+5. Enter 5 for week with the highest amount in sales.
+6. Enter 6 for week with the lowest amount in sales.
+7. Enter 7 for all analytical data. (1 through 6)
+8. Enter 8 to exit to the main menu.
+Select a operation by number [Integer <1..8>]:
+> 6
+---------
+| The week with the lowest sales was:	Week 01
+---------
+Operations:
+1. Enter 1 for total sales for each week
+2. Enter 2 for average daily sales for each week
+3. Enter 3 for total sales for all weeks
+4. Enter 4 for average weekly sales
+5. Enter 5 for week with the highest amount in sales.
+6. Enter 6 for week with the lowest amount in sales.
+7. Enter 7 for all analytical data. (1 through 6)
+8. Enter 8 to exit to the main menu.
+Select a operation by number [Integer <1..8>]:
+> 7
+---------
+| Total sales per week ::
+| Week 01 - $3283.60    | Week 02 - $4123.00    | Week 03 - $4975.60    | Week 04 - $5828.20    | Week 05 - $6680.80
+| Average sales per week ::
+| Week 01 - $3283.60    | Week 02 - $4123.00    | Week 03 - $4975.60    | Week 04 - $5828.20    | Week 05 - $6680.80
+| Total revenue: $24889.00
+| Average revenue per week: $3555.93
+| The week with the most sales was:	Week 05
+| The week with the lowest sales was:	Week 01
+---------
+Operations:
+1. Enter 1 for total sales for each week
+2. Enter 2 for average daily sales for each week
+3. Enter 3 for total sales for all weeks
+4. Enter 4 for average weekly sales
+5. Enter 5 for week with the highest amount in sales.
+6. Enter 6 for week with the lowest amount in sales.
+7. Enter 7 for all analytical data. (1 through 6)
+8. Enter 8 to exit to the main menu.
+Select a operation by number [Integer <1..8>]:
+> 8
+---------
+| Exited to main menu
+---------
+Which store would you like to analyze?
+Select a store by number (1 through 6) or enter 7 to terminate the program [Integer <1..7>]:
+> 7
+
+----------------------------------------------------------------
