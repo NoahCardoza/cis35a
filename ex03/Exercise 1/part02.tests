@@ -1,0 +1,44 @@
+-> Only one test since there us nothing for the user to input
+
+Set Interest Rate = %.2f:
+SpecialSavings<owner="Saver 1", savingsBalance=2000.00, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+SpecialSavings<owner="Saver 2", savingsBalance=4000.00, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+SpecialSavings<owner="Saver 3", savingsBalance=6000.00, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+SpecialSavings<owner="Saver 4", savingsBalance=8000.00, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+SpecialSavings<owner="Saver 5", savingsBalance=10000.00, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+Calculating Monthly Interest:
+SpecialSavings<owner="Saver 1", savingsBalance=2008.33, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+SpecialSavings<owner="Saver 2", savingsBalance=4016.67, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+SpecialSavings<owner="Saver 3", savingsBalance=6025.00, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+SpecialSavings<owner="Saver 4", savingsBalance=8033.33, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+SpecialSavings<owner="Saver 5", savingsBalance=10041.67, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+Withdrawing $500.00 from all accounts:
+SpecialSavings<owner="Saver 1", savingsBalance=1508.33, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+SpecialSavings<owner="Saver 2", savingsBalance=3516.67, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+SpecialSavings<owner="Saver 3", savingsBalance=5525.00, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+SpecialSavings<owner="Saver 4", savingsBalance=7533.33, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+SpecialSavings<owner="Saver 5", savingsBalance=9541.67, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+Set Interest Rate = %.2f:
+SpecialSavings<owner="Saver 1", savingsBalance=1508.33, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 2", savingsBalance=3516.67, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 3", savingsBalance=5525.00, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 4", savingsBalance=7533.33, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 5", savingsBalance=9541.67, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+Calculating Monthly Interest:
+SpecialSavings<owner="Saver 1", savingsBalance=1509.59, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 2", savingsBalance=3519.60, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 3", savingsBalance=5529.60, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 4", savingsBalance=7539.61, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 5", savingsBalance=9549.62, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+Depositing $1000.00 from all accounts:
+SpecialSavings<owner="Saver 1", savingsBalance=2509.59, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 2", savingsBalance=4519.60, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 3", savingsBalance=6529.60, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 4", savingsBalance=8539.61, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 5", savingsBalance=10549.62, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+Calculating Monthly Interest:
+SpecialSavings<owner="Saver 1", savingsBalance=2511.68, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 2", savingsBalance=4523.36, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 3", savingsBalance=6535.05, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 4", savingsBalance=8546.73, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+SpecialSavings<owner="Saver 5", savingsBalance=11604.58, annualInterestRate=0.01, monthlyInterestRate=0.0008>

@@ -1,0 +1,8 @@
+-> Only one test since there us nothing for the user to input
+
+Setting Interest Rate to 4%
+SpecialSavings<owner="Bob", savingsBalance=2006.67, annualInterestRate=0.04, monthlyInterestRate=0.0033>
+SpecialSavings<owner="Json", savingsBalance=3010.00, annualInterestRate=0.04, monthlyInterestRate=0.0033>
+Setting Interest Rate to 5%
+SpecialSavings<owner="Bob", savingsBalance=2015.03, annualInterestRate=0.05, monthlyInterestRate=0.0042>
+SpecialSavings<owner="Json", savingsBalance=3022.54, annualInterestRate=0.05, monthlyInterestRate=0.0042>

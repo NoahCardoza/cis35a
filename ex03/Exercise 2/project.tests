@@ -1,0 +1,5 @@
+-> Only one test since there us nothing for the user to input
+
+CargoShip<name="SS Java", launchedFrom="Perl Harbor", latitude=49.288826, longitude=-123.111122, topSpeed=20.00 knots, cargoHoldSize=127, cargoHold=["Cannabis", "Maple Syrup", "Kindness"]>
+CargoShip<name="MS JVM", launchedFrom="Port Metro Vancouver", latitude=42.364506, longitude=-71.038887, topSpeed=30.00 knots, passengersCompacity=255, passengers=["Barack Obama", "Bruno Mars", "Jason Momoa"]>
+Both ships will arrive at (lat: 0, long: 0) in 223.94 hours.
