@@ -1,0 +1,74 @@
+->  Test 00 (DEBUG: OFF)
+
+Where is your file located: test-data/scores00
+High Score:    89      98      91      78      60
+Low Score :    0       0       0       0       0
+Average   :    6.7     10.6    12      15.6    6
+
+->  Test 01 (DEBUG: OFF)
+
+Where is your file located: test-data/scores01
+High Score:    78      89      93      91      86
+Low Score :    67      77      84      82      71
+Average   :    74      83      88      86.7    78.7
+
+->  Test 02 (DEBUG: OFF)
+
+Where is your file located: test-data/scores02
+High Score:    99      99      99      99      99
+Low Score :    1       1       1       1       1
+Average   :    49.4    50.1    50.9    50.1    51.7
+
+->  Test 03 (DEBUG: OFF)
+
+Where is your file located: test-data/scores03
+High Score:    99      85      70      81      83
+Low Score :    0       0       0       0       0
+Average   :    14.2    8.4     8.3     10.9    9.5
+
+->  Test 04 (DEBUG: OFF)
+
+Where is your file located: test-data/scores04
+High Score:    98      98      99      99      98
+Low Score :    4       12      1       5       5
+Average   :    46.4    63.7    48.8    47.7    48.5
+
+->  Test 05 (DEBUG: INFO) :: Testing Student::toString,
+    Statistics::toString, and the basic functionality
+    of my `debug` package and Debugger class.
+
+Where is your file located: test-data/scores00
+INFO: Student<SID=1234, scores=[52, 7, 100, 78, 34], sIndex=5>
+INFO: Student<SID=2134, scores=[90, 36, 90, 77, 30], sIndex=5>
+INFO: Student<SID=3124, scores=[100, 45, 20, 90, 70], sIndex=5>
+INFO: Student<SID=4532, scores=[11, 17, 81, 32, 77], sIndex=5>
+INFO: Student<SID=5678, scores=[20, 12, 45, 78, 34], sIndex=5>
+INFO: Student<SID=6134, scores=[34, 80, 55, 78, 45], sIndex=5>
+INFO: Student<SID=7874, scores=[60, 100, 56, 78, 78], sIndex=5>
+INFO: Student<SID=8026, scores=[70, 10, 66, 78, 56], sIndex=5>
+INFO: Student<SID=9893, scores=[34, 9, 77, 78, 20], sIndex=5>
+INFO: Student<SID=1947, scores=[45, 40, 88, 78, 55], sIndex=5>
+INFO: Student<SID=2877, scores=[55, 50, 99, 78, 80], sIndex=5>
+INFO: Student<SID=3189, scores=[22, 70, 100, 78, 77], sIndex=5>
+INFO: Student<SID=4602, scores=[89, 50, 91, 78, 60], sIndex=5>
+INFO: Student<SID=5405, scores=[11, 11, 0, 78, 10], sIndex=5>
+INFO: Student<SID=6999, scores=[0, 98, 89, 78, 20], sIndex=5>
+INFO: Statistics::toString (before calculations)
+INFO: Statistics<highs=[0, 0, 0, 0, 0], lows=[0, 0, 0, 0, 0], aves=[0.0, 0.0, 0.0, 0.0, 0.0], quizes=[
+	[52, 90, 100, 11, 20, 34, 60, 70, 34, 45, 55, 22, 89, 11, 0],
+	[7, 36, 45, 17, 12, 80, 100, 10, 9, 40, 50, 70, 50, 11, 98],
+	[100, 90, 20, 81, 45, 55, 56, 66, 77, 88, 99, 100, 91, 0, 89],
+	[78, 77, 90, 32, 78, 78, 78, 78, 78, 78, 78, 78, 78, 78, 78],
+	[34, 30, 70, 77, 34, 45, 78, 56, 20, 55, 80, 77, 60, 10, 20]
+]>
+INFO: Statistics::toString (after calculations)
+INFO: Statistics<highs=[100, 100, 100, 90, 80], lows=[0, 7, 0, 32, 10], aves=[46.2, 42.333333333333336, 70.46666666666667, 75.66666666666667, 49.733333333333334], quizes=[
+	[52, 90, 100, 11, 20, 34, 60, 70, 34, 45, 55, 22, 89, 11, 0],
+	[7, 36, 45, 17, 12, 80, 100, 10, 9, 40, 50, 70, 50, 11, 98],
+	[100, 90, 20, 81, 45, 55, 56, 66, 77, 88, 99, 100, 91, 0, 89],
+	[78, 77, 90, 32, 78, 78, 78, 78, 78, 78, 78, 78, 78, 78, 78],
+	[34, 30, 70, 77, 34, 45, 78, 56, 20, 55, 80, 77, 60, 10, 20]
+]>
+High Score:	100	100	100	90	80
+Low Score :	0	7	0	32	10
+Average   :	46.2	42.3	70.5	75.7	49.7
