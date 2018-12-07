@@ -1,0 +1,169 @@
+Tests:
+->  Test 00 (DEBUG: INFO, OUTPUT: program.log)
+
+stdin/stdout:
+Where is your file located: test-data/scores/01
+High Score:	78	89	93	91	86
+Low Score :	67	77	84	82	71
+Average   :	74	83	88	86.7	78.7
+Saving grading information to hard disk...
+Serialization complete.
+
+program.log:
+INFO: Student<SID=1234, scores=[78, 83, 87, 91, 86], sIndex=5>
+INFO: Student<SID=2134, scores=[67, 77, 84, 82, 79], sIndex=5>
+INFO: Student<SID=1852, scores=[77, 89, 93, 87, 71], sIndex=5>
+INFO: Statistics::toString (before calculations)
+INFO: Statistics<highs=[0, 0, 0, 0, 0], lows=[0, 0, 0, 0, 0], aves=[0.0, 0.0, 0.0, 0.0, 0.0]>
+INFO: Statistics::toString (after calculations)
+INFO: Statistics<highs=[78, 89, 93, 91, 86], lows=[67, 77, 84, 82, 71], aves=[74.0, 83.0, 88.0, 86.66666666666667, 78.66666666666667]>
+DEBUG: Successfully wrote "student.1234.ser" to the filesystem.
+DEBUG: Successfully wrote "student.2134.ser" to the filesystem.
+DEBUG: Successfully wrote "student.1852.ser" to the filesystem.
+
+shell:
+> ls -l *.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:11 student.1234.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:11 student.1852.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:11 student.2134.ser
+
+->  Test 01 (DEBUG: INFO, OUTPUT: program.log)
+
+stdin/stdout:
+Where is your file located: test-data/scores/02
+High Score:	98	98	99	99	98
+Low Score :	4	12	1	5	5
+Average   :	45.5	63.7	48.6	48.5	49.3
+Saving grading information to hard disk...
+Serialization complete.
+
+
+program.log:
+INFO: Student<SID=852122, scores=[98, 52, 56, 79, 72], sIndex=5>
+INFO: Student<SID=210666, scores=[14, 68, 92, 41, 91], sIndex=5>
+INFO: Student<SID=854393, scores=[37, 37, 35, 34, 33], sIndex=5>
+INFO: Student<SID=553220, scores=[87, 80, 17, 26, 65], sIndex=5>
+INFO: Student<SID=486780, scores=[37, 40, 52, 92, 52], sIndex=5>
+INFO: Student<SID=606421, scores=[33, 87, 11, 47, 44], sIndex=5>
+INFO: Student<SID=163195, scores=[38, 93, 53, 21, 97], sIndex=5>
+INFO: Student<SID=920703, scores=[84, 95, 25, 49, 6], sIndex=5>
+INFO: Student<SID=291047, scores=[33, 92, 63, 28, 94], sIndex=5>
+INFO: Student<SID=369951, scores=[84, 41, 39, 99, 90], sIndex=5>
+INFO: Student<SID=255068, scores=[63, 37, 54, 22, 23], sIndex=5>
+INFO: Student<SID=116790, scores=[53, 81, 9, 48, 81], sIndex=5>
+INFO: Student<SID=177357, scores=[46, 23, 1, 17, 36], sIndex=5>
+INFO: Student<SID=865420, scores=[76, 79, 19, 14, 42], sIndex=5>
+INFO: Student<SID=580390, scores=[19, 90, 65, 27, 30], sIndex=5>
+INFO: Student<SID=437270, scores=[53, 66, 79, 71, 74], sIndex=5>
+INFO: Student<SID=909427, scores=[4, 96, 7, 56, 29], sIndex=5>
+INFO: Student<SID=382795, scores=[60, 98, 94, 22, 49], sIndex=5>
+INFO: Student<SID=369945, scores=[63, 57, 61, 14, 33], sIndex=5>
+INFO: Student<SID=437052, scores=[84, 12, 19, 80, 70], sIndex=5>
+INFO: Student<SID=171299, scores=[25, 18, 22, 34, 25], sIndex=5>
+INFO: Student<SID=903181, scores=[52, 84, 71, 58, 31], sIndex=5>
+INFO: Student<SID=352610, scores=[10, 53, 30, 39, 31], sIndex=5>
+INFO: Student<SID=81714, scores=[87, 63, 48, 29, 27], sIndex=5>
+INFO: Student<SID=845662, scores=[53, 82, 94, 76, 73], sIndex=5>
+INFO: Student<SID=138793, scores=[5, 24, 14, 42, 92], sIndex=5>
+INFO: Student<SID=203161, scores=[5, 84, 84, 5, 38], sIndex=5>
+INFO: Student<SID=401020, scores=[93, 53, 13, 34, 74], sIndex=5>
+INFO: Student<SID=976974, scores=[64, 40, 17, 13, 98], sIndex=5>
+INFO: Student<SID=898654, scores=[42, 33, 37, 84, 47], sIndex=5>
+INFO: Student<SID=582789, scores=[38, 77, 78, 56, 36], sIndex=5>
+INFO: Student<SID=348342, scores=[65, 68, 92, 76, 22], sIndex=5>
+INFO: Student<SID=968652, scores=[41, 28, 49, 80, 35], sIndex=5>
+INFO: Student<SID=726827, scores=[7, 86, 99, 52, 11], sIndex=5>
+INFO: Student<SID=383685, scores=[39, 77, 27, 24, 18], sIndex=5>
+INFO: Student<SID=319351, scores=[5, 54, 96, 65, 36], sIndex=5>
+INFO: Student<SID=462757, scores=[32, 85, 63, 35, 21], sIndex=5>
+INFO: Student<SID=142994, scores=[12, 58, 35, 87, 5], sIndex=5>
+INFO: Student<SID=770571, scores=[68, 92, 83, 84, 61], sIndex=5>
+INFO: Student<SID=896904, scores=[12, 64, 42, 82, 78], sIndex=5>
+INFO: Statistics::toString (before calculations)
+INFO: Statistics<highs=[0, 0, 0, 0, 0], lows=[0, 0, 0, 0, 0], aves=[0.0, 0.0, 0.0, 0.0, 0.0]>
+INFO: Statistics::toString (after calculations)
+INFO: Statistics<highs=[98, 98, 99, 99, 98], lows=[4, 12, 1, 5, 5], aves=[45.525, 63.675, 48.625, 48.55, 49.25]>
+DEBUG: Successfully wrote "student.852122.ser" to the filesystem.
+DEBUG: Successfully wrote "student.210666.ser" to the filesystem.
+DEBUG: Successfully wrote "student.854393.ser" to the filesystem.
+DEBUG: Successfully wrote "student.553220.ser" to the filesystem.
+DEBUG: Successfully wrote "student.486780.ser" to the filesystem.
+DEBUG: Successfully wrote "student.606421.ser" to the filesystem.
+DEBUG: Successfully wrote "student.163195.ser" to the filesystem.
+DEBUG: Successfully wrote "student.920703.ser" to the filesystem.
+DEBUG: Successfully wrote "student.291047.ser" to the filesystem.
+DEBUG: Successfully wrote "student.369951.ser" to the filesystem.
+DEBUG: Successfully wrote "student.255068.ser" to the filesystem.
+DEBUG: Successfully wrote "student.116790.ser" to the filesystem.
+DEBUG: Successfully wrote "student.177357.ser" to the filesystem.
+DEBUG: Successfully wrote "student.865420.ser" to the filesystem.
+DEBUG: Successfully wrote "student.580390.ser" to the filesystem.
+DEBUG: Successfully wrote "student.437270.ser" to the filesystem.
+DEBUG: Successfully wrote "student.909427.ser" to the filesystem.
+DEBUG: Successfully wrote "student.382795.ser" to the filesystem.
+DEBUG: Successfully wrote "student.369945.ser" to the filesystem.
+DEBUG: Successfully wrote "student.437052.ser" to the filesystem.
+DEBUG: Successfully wrote "student.171299.ser" to the filesystem.
+DEBUG: Successfully wrote "student.903181.ser" to the filesystem.
+DEBUG: Successfully wrote "student.352610.ser" to the filesystem.
+DEBUG: Successfully wrote "student.81714.ser" to the filesystem.
+DEBUG: Successfully wrote "student.845662.ser" to the filesystem.
+DEBUG: Successfully wrote "student.138793.ser" to the filesystem.
+DEBUG: Successfully wrote "student.203161.ser" to the filesystem.
+DEBUG: Successfully wrote "student.401020.ser" to the filesystem.
+DEBUG: Successfully wrote "student.976974.ser" to the filesystem.
+DEBUG: Successfully wrote "student.898654.ser" to the filesystem.
+DEBUG: Successfully wrote "student.582789.ser" to the filesystem.
+DEBUG: Successfully wrote "student.348342.ser" to the filesystem.
+DEBUG: Successfully wrote "student.968652.ser" to the filesystem.
+DEBUG: Successfully wrote "student.726827.ser" to the filesystem.
+DEBUG: Successfully wrote "student.383685.ser" to the filesystem.
+DEBUG: Successfully wrote "student.319351.ser" to the filesystem.
+DEBUG: Successfully wrote "student.462757.ser" to the filesystem.
+DEBUG: Successfully wrote "student.142994.ser" to the filesystem.
+DEBUG: Successfully wrote "student.770571.ser" to the filesystem.
+DEBUG: Successfully wrote "student.896904.ser" to the filesystem.
+
+
+shell:
+> ls -l *.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.116790.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.138793.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.142994.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.163195.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.171299.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.177357.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.203161.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.210666.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.255068.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.291047.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.319351.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.348342.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.352610.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.369945.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.369951.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.382795.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.383685.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.401020.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.437052.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.437270.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.462757.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.486780.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.553220.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.580390.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.582789.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.606421.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.726827.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.770571.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.81714.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.845662.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.852122.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.854393.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.865420.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.896904.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.898654.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.903181.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.909427.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.920703.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.968652.ser
+-rw-r--r--  1 noahcardoza  staff  409 Dec  5 14:16 student.976974.ser

@@ -2,7 +2,7 @@ package util;
 import java.io.File;
 import java.util.Scanner;
 
-import adapter.StudentApiOutline;
+import adapter.StudentFileIOAPI;
 
 public class UI {
 	private static Scanner stdin;
@@ -45,7 +45,7 @@ public class UI {
 	
 	// Program Specific
 	
-	public static void studentLookup(String cwd, StudentApiOutline API) {
+	public static void studentLookup(String cwd, StudentFileIOAPI API) {
 		int sid;
 		System.out.println("Student Lookup");
 		System.out.println("Enter a student ID to view their score's.");

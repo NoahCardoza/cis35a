@@ -1,0 +1,59 @@
+Bash:
+> wc -l test-data/scores/*
+    16 test-data/scores/-1
+    15 test-data/scores/00
+     4 test-data/scores/01
+   949 test-data/scores/02
+    30 test-data/scores/03
+    40 test-data/scores/04
+1054 total
+
+Notes:
+  `test-data/scores/-1` - is an invalid file
+
+Tests:
+->  Test 00 (DEBUG: WARN, OUTPUT: program.log)
+
+stdin/stdout:
+Where is your file located: test-data/scores/-1
+The file read appears to be corrupt. Specify another path to continue.
+Where is your file located: test-data/scores/00
+High Score:	100	100	100	90	80
+Low Score :	0	7	0	32	10
+Average   :	46.2	42.3	70.5	75.7	49.7
+
+program.log:
+WARN: StudentGradingException[ errno=100, message="The expected format was not followed on line 8 of the student data file." ]
+
+->  Test 01 (DEBUG: INFO, OUTPUT: program.log)
+
+stdin/stdout:
+Where is your file located: test-data/scores
+That file dose not exist.
+Where is your file located: test-data/scores/06
+That file dose not exist.
+Where is your file located: test-data/scores/00
+High Score:	100	100	100	90	80
+Low Score :	0	7	0	32	10
+Average   :	46.2	42.3	70.5	75.7	49.7
+
+program.log:
+INFO: Student<SID=1234, scores=[52, 7, 100, 78, 34], sIndex=5>
+INFO: Student<SID=2134, scores=[90, 36, 90, 77, 30], sIndex=5>
+INFO: Student<SID=3124, scores=[100, 45, 20, 90, 70], sIndex=5>
+INFO: Student<SID=4532, scores=[11, 17, 81, 32, 77], sIndex=5>
+INFO: Student<SID=5678, scores=[20, 12, 45, 78, 34], sIndex=5>
+INFO: Student<SID=6134, scores=[34, 80, 55, 78, 45], sIndex=5>
+INFO: Student<SID=7874, scores=[60, 100, 56, 78, 78], sIndex=5>
+INFO: Student<SID=8026, scores=[70, 10, 66, 78, 56], sIndex=5>
+INFO: Student<SID=9893, scores=[34, 9, 77, 78, 20], sIndex=5>
+INFO: Student<SID=1947, scores=[45, 40, 88, 78, 55], sIndex=5>
+INFO: Student<SID=2877, scores=[55, 50, 99, 78, 80], sIndex=5>
+INFO: Student<SID=3189, scores=[22, 70, 100, 78, 77], sIndex=5>
+INFO: Student<SID=4602, scores=[89, 50, 91, 78, 60], sIndex=5>
+INFO: Student<SID=5405, scores=[11, 11, 0, 78, 10], sIndex=5>
+INFO: Student<SID=6999, scores=[0, 98, 89, 78, 20], sIndex=5>
+INFO: Statistics::toString (before calculations)
+INFO: Statistics<highs=[0, 0, 0, 0, 0], lows=[0, 0, 0, 0, 0], aves=[0.0, 0.0, 0.0, 0.0, 0.0]>
+INFO: Statistics::toString (after calculations)
+INFO: Statistics<highs=[100, 100, 100, 90, 80], lows=[0, 7, 0, 32, 10], aves=[46.2, 42.333333333333336, 70.46666666666667, 75.66666666666667, 49.733333333333334]>

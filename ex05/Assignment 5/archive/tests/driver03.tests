@@ -1,0 +1,88 @@
+Tests:
+shell:
+> ls -l test-data/students/00
+total 120
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.1234.ser
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.1947.ser
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.2134.ser
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.2877.ser
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.3124.ser
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.3189.ser
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.4532.ser
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.4602.ser
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.5405.ser
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.5678.ser
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.6134.ser
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.6999.ser
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.7874.ser
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.8026.ser
+-rw-r--r--  1 noahcardoza  staff  409 Nov 28 19:25 student.9893.ser
+>
+
+stdin/stdout:
+->  Test 00 (DUBUG: ALL, OUTPUT: STDOUT)
+
+Where can the student binaries be found?
+Where is your directory located: test-data/students/00
+
+------------------------------------------
+
+High Score:	100	100	100	90	80
+Low Score :	0	7	0	32	10
+Average   :	46.2	42.3	70.5	75.7	49.7
+
+------------------------------------------
+
+Student Lookup
+Enter a student ID to view their score's.
+Leave the input blank to exit.
+Select a student by ID: 0000
+A student with this ID could not be located
+Select a student by ID: this is not an id
+A student with this ID could not be located
+Select a student by ID: 1234
+Student<SID=1234, scores=[52, 7, 100, 78, 34], sIndex=5>
+Select a student by ID: 6134
+Student<SID=6134, scores=[34, 80, 55, 78, 45], sIndex=5>
+Select a student by ID: 9893
+Student<SID=9893, scores=[34, 9, 77, 78, 20], sIndex=5>
+Select a student by ID:
+
+------------------------------------------
+
+Have a good day!
+
+->  Test 01 (DUBUG: ALL, OUTPUT: STDOUT)
+
+shell:
+> ls test-data/students/-1
+>
+
+stdin/stdout:
+Where can the student binaries be found?
+Where is your directory located: test-data/students/-1
+
+------------------------------------------
+
+WARN: StudentGradingException[ errno=3, message="Could not find any student.ser files in "test-data/students/-1"" ]
+This directory does not contain any student data.
+Exiting...
+
+->  Test 02 (DUBUG: ALL, OUTPUT: STDOUT)
+
+shell:
+> ls -l test-data
+total 0
+drwxr-xr-x  8 noahcardoza  staff  256 Dec  5 13:29 scores
+drwxr-xr-x  9 noahcardoza  staff  288 Dec  5 22:05 students
+>
+
+stdin/stdout:
+Where can the student binaries be found?
+Where is your directory located: test-data
+
+------------------------------------------
+
+WARN: StudentGradingException[ errno=3, message="Could not find any student.ser files in "test-data"" ]
+This directory does not contain any student data.
+Exiting...
