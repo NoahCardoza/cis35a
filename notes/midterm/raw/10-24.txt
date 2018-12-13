@@ -1,0 +1,149 @@
+Review - 
+--Inheritance and Polymorphism
+Lab 4 - 
+ - creating a parent class - regular class - using java codings standards.
+ - create a child class using extends - 
+ - single and hierarchical (one parent has two child classes)
+ - Anatomy of inheritance - 
+	properties declared private in parent are accessible in child using public methods.
+	super() - this call can be left inside the constructor - refers to parent's default constructor.
+	super. - refers to parent's instance methods.
+	same signature for method in parent and child - overriding --> enables polymorphism.
+	Understanding Polymorphism
+	P a1 = new C();//where P is parent class and C is Child class.
+	What can a1 "see" in C class?
+
+		"see" --> what can a1 access in Child class C
+		a1 is a reference of type P - so it can obviously access properties and methods of P. 
+		It can also access overridden methods in C <-- enables Polymorphism.
+		It cannot access properties and other methods in C.
+
+Example from Oct 22nd 2018
+Shape - two methods - print() and area()
+Square is a child of Shape - print() and area()
+
+
+
+	Can I write C a2 = new C(); //yes absolutely.
+		    P a3 = new P();
+
+Methods can be overloaded - across parent and child classes.
+
+Polymorphism can mean - 
+	overloading
+	overriding
+
+Observation from Lab 2 grading - 
+1 - Some of you are not following instructions for design - as given in class.
+2 - Submit class diagrams - 
+3 - Submit test runs - 
+4 - coding conventions - 
+
+Pl. focus on concepts applied in each lab to prepare for the midterm.
+
+Analyzeresults - 6 operations in Store class - computing totals and high values etc.
+ - call all 6 methods in analyzeresults().
+
+When you start the program - 
+	create Franchise and Store class - load the data.
+	calculations for all stores ahead of time.
+	UI.java - input/output - validation - 
+
+Lab 4 - 
+Exercise 1
+Part 1
+Create a class SavingsAccount. Use a static class variable to store the annualInterestRate for each of the savers. Each object of the class contains a private instance variable savingsBalance indicating the amount the saver currently has on deposit. Provide method calculateMonthlyInterest to calculate the monthly interest by multiplying the balance by annualInterestRate divided by 12; this interest should be added to savingsBalance. Provide a static method modifyInterestRate that sets the annualInterestRate to a new value. Write a driver program to test the class SavingsAccount. Instantiate two different savingsAccount objects, saver1 and saver2, with balances of $2000.00 and $3000.00, respectively. Set annualInterestRate to 4%, then calculate the monthly interest and print the new balances for each of the savers. Then set the annualInterestRate to 5% and calculate the next months interest and print the new balances for each of the savers. 
+
+Part 2
+Write another class SpecialSavings that extends SavingsAccount to pay interest of 10% on accounts that have balances that exceed 10K. Also provided methods to deposit and take money out of savings account. Write a driver program to test the class SpecialSavings. Instantiate two different savingsAccount objects, saver1 and saver2, with balances of $2000.00 and $3000.00, respectively. Make a few deposits and withdrawals and show balance and interest earned for each account. 
+
+Some Tips for helping you with Lab 4:
+For Lab 4 part 1 - 
+Pl. follow the instructions in the assignment and write the class definition. A driver program is the code you would write in main() to exercise the code of class definition. 
+
+You should declare private variable in your class definition. You should also write protected methods to set and get the value of private variables. 
+
+For Exercise 1 part 2 - 
+You need to write deposit and withdrawal methods. Should you put this in parent class or child class? Try to answer this question so that you have most reusability in your class definition. 
+
+In this part - you have to learn how polymorphism works. 
+You will have accounts whose balance might be above or below 10K. By using methods in both classes try to change the interest earned to 10% if balance is above 10K or 4% if the interest is lower.
+
+Exercise 2
+Design a Ship, CargoShip and CruiseShip class being mindful of behavior of each. Demonstrate the classes in a program that has a Ship array. Assign various Ships, CruiseShip and CargoShip to the array elements.
+CargoShip and CruiseShip are a child of Ship class.
+
+Polymorphism - 
+Ship - 5 properties {floating, capacity, length, width, name, height, origin, departuredate, arrivaldate, departingport, arrivalport, owner}
+CargoShip extends Ship - additional 5 properties {cargotype, loadingmethod, numberofcranes, contraband, cargovalue}
+CruiseShip extends Ship - additional 5 properties {ticketprice, numberofrooms, buffetmenu, services [], cruisetype}
+some methods - in Shipe, CargoShip and CruiseShip - should be overridden - demonstrate polymorphism.
+
+
+Pl. submit a class diagram for each exercise, along with code and test runs.
+
+Strings and Stringbuffers - 
+String literals - 
+	String x = "abc"; //immutable
+	x = "cde"; //memory for abc is GC and memory for cde is allocated.
+
+	String x2 = "cde";
+	//two strings with same value.
+
+	cde is stored in a memory area called constant pool - and reference to the memory containig cde is stored in x and x2.
+
+	x2 = "893"; if value of x2 changes does that change the value of x? - No.
+	//"893" new string is created for x2.
+
+	String x = x2 + x2 + x2 + x2 +x2 + x2 .... ;
+	try for fun - but not a good coding practice.
+
+	String x = new String("abc");
+	 - String objects are immutable.
+
+	StringBuffer a2 = new StringBuffer(); //grow or shrink the size of a string.
+	//memory is reusable.
+
+java.lang package library - 
+
+https://docs.oracle.com/javase/9/docs/api/index.html?overview-summary.html
+
+
+Wrapper Classes
+int x = 10;
+float x1;
+
+Integer x1 = new Integer(10); 
+int x2 = 10;
+Float, Double, Character, Boolean, Integer, Short, Long, String
+
+//java.lang - review the API - few common one (are in my notes)
+
+type conversion functions.
+String --> Float
+Float --> String
+
+immutable - new object each time.
+
+autoboxing
+
+Integer x1 = new Integer(10); 
+int x2 = 10;
+
+x1 = x2; //ability to assign a literal to a wrapper class.
+
+Wrapper - take a primitive datatype and make an object out of it.
+
+Midterm - everything done so far will be on the midterm.
+Midterm - 6 to 8 questions - 15mins per question. 1.5 hours or 2 hours.
+Each question is 10 points.
+6 out of 8 questions
+Exam - comprehensive - read and write code.
+open book and notes
+no electronic devices
+sharing of notes and books is not allowed.
+one person per table.
+easier first and harder later - ascending order
+sample midterm -
+
+-

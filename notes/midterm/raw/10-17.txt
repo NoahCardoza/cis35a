@@ -1,0 +1,777 @@
+Debugger - 
+Tool - that allows running the code stepwise - slowly in areas you think there might be issues - 
+stepping through code line by line - 
+- Insert a break point  - dbl click on left bar - across classes - 
+- debug perspective - java perspective
+- step into (stepping into a function) and step over (jumps over a function)
+
+Sequential Search - unsorted array 
+	int x [] = {1, 3, 54, 58, 122};
+	int look = 55;
+	location - 4 
+	find look in x - 
+	compare look with every element of x until found or end of array.
+	return a negative value if not found or return loc, if found.
+	
+	enhancement - 
+	work with sorted array - overhead.
+	compare until look > x[i] .. i < size of array.	
+
+Containment and array of objects 
+
+containment - putting an object inside another.
+public class a { } 
+public class b { 
+	a a1 = new a();
+}
+public class c {
+	b b1 [];
+	c() {
+		b1 = new b[3]; //array of objects.
+		b1[0] = new b(); //each b has a.
+		b1[1] = new b();
+		b1[2] = new b();
+}
+//main
+c a1 = new c(); //how many objects - 8 (final answer)
+
+instance - unique memory location for each object.
+static - shared between instances of the same class (class variable)
+
+static method can update static variables
+instance method can update both.
+
+FileIO.java
+Exceptions - 
+	Two types of issue 
+	errors - no recovery
+	exceptions - recovery
+		two types of exceptions - 
+		i know about - fix - checked exception required to use try { }
+		mistakes i will make in the future - that I do not know about - want to learn so I don't make those mistakes again - unchecked
+		
+--System - what happens in JVM?
+--Fixing problems in software using custom exception - program that can fix itself.
+
+Lab 2 - 
+ ..part 2 - association between Simulation and Coin class unless you have some input methods in Driver.
+  pl. ignore instruction in lab desc - use design give in class.
+submit a class diagram for each part - pen/paper.
+submit test cases as comments in main().
+submitting zip files -
+
+
+part 1 - recommend using Strings for everything. - 
+
+default constructors are usually empty - 
+
+Inherit / Polymorphism.
+
+transferring the properties of parent to child <-- inheritance 
+reusability - 
+
+class P { 
+	private int x;
+	public int setX(int x)
+	{
+		this.x = x;
+	} 
+}
+class C extends P {
+	int z;
+	C() { 
+		z = 14;
+		//x = 55; //error - scope issue
+		setX(55);
+	}
+}
+public class Driver{
+	public static void main(String [] x)
+	{
+		C p = new C();
+		//p.x = 44;
+		p.setX(44);
+	}
+}
+types - single, multiple, multilevel, hierarchical
+
+ class C1 extends P {
+	int z;
+	C() { 
+		z = 14;
+		//x = 55; //error - scope issue
+		setX(55);
+	}
+}
+When to use inheritance - 
+when common properties live in parent for a set of child classes.
+1. Shape
+Rectangle, Circle, Triangle
+
+2. Music
+Western, Pop, Rock, Country
+
+3. Major
+Business, CS, History, Engineering, Math, DataScience
+
+*****************************************************************************
+public class Shape {
+private int sides;
+private int area;
+public Shape() { }
+public Shape(int sides) {
+super(); //refers to the parent class - Object class
+//super() calls the constructor for parent class.
+this.sides = sides;
+}
+public int getSides() {
+return sides;
+}
+public void setSides(int sides) {
+this.sides = sides;
+}
+public int getArea() {
+return area;
+}
+public void setArea(int area) {
+this.area = area;
+}
+public void print() {
+System.out.printf("Sides=%d\n",sides);
+System.out.printf("Area=%d\n",area);
+}
+public void area() {
+area=0;
+}
+}
+
+public class Square extends Shape{
+private int length;
+public Square() {}
+public Square(int sides, int length){
+//this.setSides(sides);
+super(sides);
+this.length = length;
+}
+public void area() {
+int x=0;
+x = length * length;
+this.setArea(x);
+}
+public void print() {
+super.print();//print method in parent.
+System.out.printf("Calculated Area=%d\n", (this.getArea()));
+}
+}
+
+public class Driver {
+public static void main(String [] args){
+//Shape circle = new Shape();
+//circle.print();
+Square sq = new Square(4, 10);
+sq.area();
+sq.print();
+}
+}
+
+area() and print() exist in both Shape and Square - with same method signature --> Overridden method when signature in parent and child class is the same.
+
+Why is overriding useful?
+
+
+public class Driver {
+public static void main(String[] args) {
+// Shape circle = new Shape();
+// circle.print();
+Circle sq = new Circle(100);
+sq.area();
+//sq.parentprint();
+System.out.printf("Parent\n");
+Shape shape = new Shape();
+shape.print(); //print method in parent.
+System.out.printf("Child\n");
+shape = sq; //instance of type child can be assigned to a parent
+//parent = child.
+//shape is of type Shape and sq is of type Square
+shape.print();//print method in child
+//shape.setLength(20);//parent reference shape cannot see properties and methods unique in child.
+//print() - same signature in parent and child
+//but different meanings.
+//polymorphism
+
+}
+}
+
+
+public class Square extends Shape{
+private int length;
+public Square() {}
+public Square(int sides, int length){
+//this.setSides(sides);
+super(sides);
+this.length = length;
+}
+
+public int getLength() {
+return length;
+}
+public void setLength(int length) {
+this.length = length;
+}
+public void area() {
+int x=0;
+x = length * length;
+this.setArea(x);
+}
+public void parentprint() { //wrapper method.
+super.print(); //indirect call.
+}
+public void print() {
+super.print();
+System.out.printf("Calculated Area=%d\n", (this.getArea()));
+}
+}
+
+
+public class Circle extends Shape{
+private int radius;
+Circle(int radius) { 
+super(0);
+this.radius = radius;
+}
+public void area() {
+int x = 0;
+x = (int) (3.14159 * radius * radius);
+this.setArea(x);
+}
+public void print() {
+super.print();
+System.out.printf("Calculated Area=%d\n", (this.getArea()));
+}
+}
+
+public class Shape {
+private int sides;
+private int area;
+public Shape() { }
+public Shape(int sides) {
+super(); //refers to the parent class - Object class
+//super() calls the constructor for parent class.
+this.sides = sides;
+}
+public int getSides() {
+return sides;
+}
+public void setSides(int sides) {
+this.sides = sides;
+}
+public int getArea() {
+return area;
+}
+public void setArea(int area) {
+this.area = area;
+}
+public void print() {
+System.out.printf("Sides=%d\n",sides);
+System.out.printf("Area=%d\n",area);
+}
+public void area() {
+area=0;
+}
+}
+
+
+//more examples - 
+Running Notes
+Review - 
+In Lab 3 - working on existing codebase.
+..fileio
+..containment
+..array of objects
+..user experience in a console(shell) application.
+file io - 
+3 things - opening a file and buffer, reading data and processing data - fileio.java - write comments
+exception handling - try/catch
+
+containment - putting an object inside another.
+public class a { } 
+public class b { 
+a a1 = new a();
+}
+public class c {
+b b1 [];
+c() {
+b1 = new b[3]; //array of objects.
+b1[0] = new b();
+b1[1] = new b();
+b1[2] = new b();
+}
+//main
+c a1 = new c(); //how many objects -
+
+
+user experience - prompt the user for a store. 
+prompt for a operation.
+UI.java
+
+
+Any questions on Lab 3 -
+
+Inheritance and Polymorphism - 
+- 3 relationships
+encapsulation, association and containment.
+array of objects -
+
+transferring the properties of parent to child <-- inheritance 
+reusability - 
+class P { 
+private int x;
+public int setX(int x)
+{
+this.x = x;
+} 
+}
+class C extends P {
+int z;
+C() { 
+z = 14;
+//x = 55; //error - scope issue
+setX(55);
+}
+}
+public class Driver{
+public static void main(String [] x)
+{
+C p = new C();
+p.x = 44;
+}
+}
+types - single, multiple, multilevel, hierarchical
+
+When to use inheritance - 
+when common properties live in parent for a set of child classes.
+1. Shape
+Rectangle, Circle, Triangle
+
+2. Music
+Western, Pop, Rock, Country
+
+3. Major
+Business, CS, History, Engineering, Math, DataScience
+
+
+public class Shape {
+private int sides;
+private int area;
+public Shape() { }
+public Shape(int sides) {
+super(); //refers to the parent class - Object class
+//super() calls the constructor for parent class.
+this.sides = sides;
+}
+public int getSides() {
+return sides;
+}
+public void setSides(int sides) {
+this.sides = sides;
+}
+public int getArea() {
+return area;
+}
+public void setArea(int area) {
+this.area = area;
+}
+public void print() {
+System.out.printf("Sides=%d\n",sides);
+System.out.printf("Area=%d\n",area);
+}
+public void area() {
+area=0;
+}
+}
+
+public class Square extends Shape{
+private int length;
+public Square() {}
+public Square(int sides, int length){
+//this.setSides(sides);
+super(sides);
+this.length = length;
+}
+public void area() {
+int x=0;
+x = length * length;
+this.setArea(x);
+}
+public void print() {
+super.print();//print method in parent.
+System.out.printf("Calculated Area=%d\n", (this.getArea()));
+}
+}
+
+public class Driver {
+public static void main(String [] args){
+//Shape circle = new Shape();
+//circle.print();
+Square sq = new Square(4, 10);
+sq.area();
+sq.print();
+}
+}
+
+area() and print() exist in both Shape and Square - with same method signature --> Overridden method when signature in parent and child class is the same.
+
+Why is overriding useful?
+
+
+public class Driver {
+public static void main(String[] args) {
+// Shape circle = new Shape();
+// circle.print();
+Circle sq = new Circle(100);
+sq.area();
+//sq.parentprint();
+System.out.printf("Parent\n");
+Shape shape = new Shape();
+shape.print(); //print method in parent.
+System.out.printf("Child\n");
+shape = sq; //instance of type child can be assigned to a parent
+//parent = child.
+//shape is of type Shape and sq is of type Square
+shape.print();//print method in child
+//shape.setLength(20);//parent reference shape cannot see properties and methods unique in child.
+//print() - same signature in parent and child
+//but different meanings.
+//polymorphism
+
+}
+}
+
+
+public class Square extends Shape{
+private int length;
+public Square() {}
+public Square(int sides, int length){
+//this.setSides(sides);
+super(sides);
+this.length = length;
+}
+
+public int getLength() {
+return length;
+}
+public void setLength(int length) {
+this.length = length;
+}
+public void area() {
+int x=0;
+x = length * length;
+this.setArea(x);
+}
+public void parentprint() { //wrapper method.
+super.print(); //indirect call.
+}
+public void print() {
+super.print();
+System.out.printf("Calculated Area=%d\n", (this.getArea()));
+}
+}
+
+
+public class Circle extends Shape{
+private int radius;
+Circle(int radius) { 
+super(0);
+this.radius = radius;
+}
+public void area() {
+int x = 0;
+x = (int) (3.14159 * radius * radius);
+this.setArea(x);
+}
+public void print() {
+super.print();
+System.out.printf("Calculated Area=%d\n", (this.getArea()));
+}
+}
+
+public class Shape {
+private int sides;
+private int area;
+public Shape() { }
+public Shape(int sides) {
+super(); //refers to the parent class - Object class
+//super() calls the constructor for parent class.
+this.sides = sides;
+}
+public int getSides() {
+return sides;
+}
+public void setSides(int sides) {
+this.sides = sides;
+}
+public int getArea() {
+return area;
+}
+public void setArea(int area) {
+this.area = area;
+}
+public void print() {
+System.out.printf("Sides=%d\n",sides);
+System.out.printf("Area=%d\n",area);
+}
+public void area() {
+area=0;
+}
+}
+
+
+//more examples -
+
+
+public class Cat extends Animal{
+public void sound() {
+System.out.println("Meow");
+}
+}
+
+
+public class Dog extends Animal{
+public void sound() {
+System.out.println("Woof");
+}
+}
+
+
+public class Bird extends Animal{
+public void sound() {
+System.out.println("Tweet");
+}
+}
+
+
+public class Animal {
+public void sound() {
+System.out.println("Animal - I don't know");
+}
+}
+
+
+public class Driver {
+
+public static void main(String[] args) {
+Animal a = new Bird();
+//a.sound();
+Bird tweety = new Bird();
+a = tweety;
+//a.sound();
+
+Dog fido = new Dog();
+a = fido;
+//a.sound();
+
+Cat garfield = new Cat();
+a = garfield;
+//a.sound();
+
+Animal a1 [] = new Animal[3];
+a1[0] = fido;
+a1[1] = garfield;
+a1[2] = tweety;
+for(int i=0;i<a1.length;i++)
+a1[i].sound(); //dynamic binding.
+}
+
+}
+
+
+Running Notes 
+For Lab 3- design Store.java - 
+Pl. make sure you create instance variables for each calculation. This will enable you to print one value at a time for a store when prompted by a menu in UI.java
+
+Inherit and Polymorph
+..parent --> child extends parent - 
+child get properties, constructors and methods.
+
+..super - refers to the parent - calling a constructor, a method in parent or accessing a variable (which should never be used - properties are private).
+
+..overloading - same method name - different signatures in same class or across parent / child.
+
+..overriding - same method name and signture across parent and child.
+
+Implicit casting for classes
+
+class P { public void m() { } }
+class C extends P { public void m() { } }
+
+P a1 [] = new P[3];
+a1[0] = new P();
+a1[1] = new P();
+a1[2] = new C();
+
+for(int i=0;i<a1.length;i++)
+a1[i].m(); //polymorphism.
+
+C c = new C();
+
+Strings and StringBuffer -
+
+String x1 = "a"; //literals - 
+String x2 = "a";
+String x3 = "a";
+
+memory for "a" is allocated once - memory area - constant pool.
+
+(x1==x2) //comparing addresses - same address.
+
+Strings - immutable - 
+x3 = "aa";
+
+x1 = x2+x3+x1+x2+x3+x1+x2+x3+x1+x2+x3+x1+x2+x3+x1;
+Constant pool has limited amount of memory. - it runs out of memory --> JVM crashes.
+
+String x4 = new String("x");
+String x5 = new String("x");
+(x4==x5) //comparing addresses - false.
+(x4.equals(x5)) //true
+
+String function - >10.
+
+Reuse existing memory location - StringBuffer -
+
+StringBuffer a1 = new StringBuffer("abc");
+
+
+Coding standards (new ones added)
+When manipulating Strings please use StringBuffers.
+Starting Lab 4 pl. start using packages.
+constructor should always be public.
+
+Packages -
+-is a box that contains .java files of similar type - code organization.
+-new scope for variables - package level variables - do not use - protected variables
+
+packages -
+
+package p1;
+
+public class Cat extends Animal{
+Cat() {
+jungle = "Fancy Kalamazoo";
+}
+}
+
+
+package p1;
+
+public class Dog {
+private Animal a1;
+Dog() {
+a1 = new Animal();
+a1.jungle = "Fancy African Safari";
+}
+}
+package driver;
+
+import p1.*;
+import p1.sp1.*;
+
+public class Driver {
+
+public static void main(String[] args) {
+Animal cow = new Animal();
+Cat garfield = new Cat();
+Bird cuckoo = new Bird();
+
+}
+
+}
+package p1.sp1;
+
+public class Bird {
+
+}
+package p1;
+
+public class Animal {
+protected String jungle;
+}
+
+What are protected variables?
+1. usable in a package.
+2. usable in P/C relationship
+
+Lab 4 -
+
+All assignments are emailed to cislabs05@gmail.com
+
+This assignment has two exercises.
+
+lab4ex1
+..acct
+SavingsAccount.java
+SpecialSavings.java
+..driver
+Driver1.java
+Driver2.java
+
+lab4ex2
+..ship
+Ship.java, CargoShip.java, CruiseShip.java
+..driver
+Driver.java
+
+Exercise 1
+Part 1
+Create a class SavingsAccount. Use a static class variable to store the annualInterestRate for each of the savers. Each object of the class contains a private instance variable savingsBalance indicating the amount the saver currently has on deposit. Provide method calculateMonthlyInterest to calculate the monthly interest by multiplying the balance by annualInterestRate divided by 12; this interest should be added to savingsBalance. Provide a static method modifyInterestRate that sets the annualInterestRate to a new value. Write a driver program to test the class SavingsAccount. Instantiate two different savingsAccount objects, saver1 and saver2, with balances of $2000.00 and $3000.00, respectively. Set annualInterestRate to 4%, then calculate the monthly interest and print the new balances for each of the savers. Then set the annualInterestRate to 5% and calculate the next months interest and print the new balances for each of the savers. 
+
+Part 2
+Write another class SpecialSavings that extends SavingsAccount to pay interest of 10% on accounts that have balances that exceed 10K. Also provided methods to deposit and take money out of savings account. Write a driver program to test the class SpecialSavings. Instantiate two different savingsAccount objects, saver1 and saver2, with balances of $2000.00 and $3000.00, respectively. Make a few deposits and withdrawals and show balance and interest earned for each account. 
+
+Some Tips for helping you with Lab 4:
+For Lab 4 part 1 - 
+Pl. follow the instructions in the assignment and write the class definition. A driver program is the code you would write in main() to exercise the code of class definition. 
+
+You should declare private variable in your class definition. You should also write protected methods to set and get the value of private variables. 
+
+For Exercise 1 part 2 - 
+You need to write deposit and withdrawal methods. Should you put this in parent class or child class? Try to answer this question so that you have most reusability in your class definition. 
+
+In this part - you have to learn how polymorphism works. 
+You will have accounts whose balance might be above or below 10K. By using methods in both classes try to change the interest earned to 10% if balance is above 10K or 4% if the interest is lower.
+
+Exercise 2
+Design a Ship, CargoShip and CruiseShip class being mindful of behavior of each. Demonstrate the classes in a program that has a Ship array. Assign various Ships, CruiseShip and CargoShip to the array elements.
+CargoShip and CruiseShip are a child of Ship class.
+
+Polymorphism - 
+Ship - 5 properties {floating, capacity, length, width, name, height, origin, departuredate, arrivaldate, departingport, arrivalport, owner}
+CargoShip extends Ship - additional 5 properties {cargotype, loadingmethod, numberofcranes, contraband, cargovalue}
+CruiseShip extends Ship - additional 5 properties {ticketprice, numberofrooms, buffetmenu, services [], cruisetype}
+some methods - in Shipe, CargoShip and CruiseShip - should be overridden - demonstrate polymorphism.
+
+
+Pl. submit a class diagram for each exercise, along with code and test runs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

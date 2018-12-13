@@ -1,5 +1,87 @@
--> Only one test since there us nothing for the user to input
+-> Test 01
+
+:: Code
+
+import java.util.stream.Stream;
+
+public class Main {
+
+	public static void main(String[] args) {
+		CargoShip cargoShip = new CargoShip("SS Java", 127);
+		CruiseShip cruiseShip = new CruiseShip("MS JVM", 255);
+		
+		cargoShip.christen("Perl Harbor", 49.288826, -123.111122);
+		cruiseShip.christen("Port Metro Vancouver", 42.364506, -71.038887);
+		
+		cruiseShip.addPassenger("Barack Obama");
+		cruiseShip.addPassenger("Bruno Mars");
+		cruiseShip.addPassenger("Jason Momoa");
+		
+		cargoShip.packCargo("Cannabis");
+		cargoShip.packCargo("Maple Syrup");
+		cargoShip.packCargo("Kindness");
+		
+		cargoShip.print();
+		cruiseShip.print();
+		
+		Stream<Ship> ships = Stream.of(cargoShip, cruiseShip);
+		
+		System.out.printf("Both ships will arrive at (lat: 0, long: 0) in %.2f hours.\n", ships.mapToDouble(ship -> ship.sailTo(0, 0)).max().getAsDouble());
+	}
+
+}
+
+
+:: Output
 
 CargoShip<name="SS Java", launchedFrom="Perl Harbor", latitude=49.288826, longitude=-123.111122, topSpeed=20.00 knots, cargoHoldSize=127, cargoHold=["Cannabis", "Maple Syrup", "Kindness"]>
 CargoShip<name="MS JVM", launchedFrom="Port Metro Vancouver", latitude=42.364506, longitude=-71.038887, topSpeed=30.00 knots, passengersCompacity=255, passengers=["Barack Obama", "Bruno Mars", "Jason Momoa"]>
 Both ships will arrive at (lat: 0, long: 0) in 223.94 hours.
+
+-> Test 01
+
+:: Code
+
+import java.util.stream.Stream;
+
+public class Main {
+
+	public static void main(String[] args) {
+		CargoShip cargoShip = new CargoShip(); //("SS Witness", 127);
+		CruiseShip cruiseShip = new CruiseShip(); //("JS CPP", 255);
+		
+		cargoShip.setName("SS Witness");
+		cargoShip.setTopSpeed(60);
+		cargoShip.setCargoHoldSize(64);
+		
+		cruiseShip.setName("JS CPP");
+		cruiseShip.setTopSpeed(100);
+		cruiseShip.setPassengersCompacity(500);
+		
+		cargoShip.christen("Perl Harbor", 49.288826, -123.111122);
+		cruiseShip.christen("Port Metro Vancouver", 42.364506, -71.038887);
+		
+		cruiseShip.addPassenger("Barack Obama");
+		cruiseShip.addPassenger("Bruno Mars");
+		cruiseShip.addPassenger("Jason Momoa");
+		
+		cargoShip.packCargo("Cannabis");
+		cargoShip.packCargo("Maple Syrup");
+		cargoShip.packCargo("Kindness");
+		
+		cargoShip.print();
+		cruiseShip.print();
+		
+		Stream<Ship> ships = Stream.of(cargoShip, cruiseShip);
+		
+		System.out.printf("Both ships will arrive at (lat: 0, long: 0) in %.2f hours.\n", ships.mapToDouble(ship -> ship.sailTo(0, 0)).max().getAsDouble());
+	}
+
+}
+
+
+:: Output
+
+CargoShip<name="SS Witness", launchedFrom="Perl Harbor", latitude=49.288826, longitude=-123.111122, topSpeed=60.00 knots, cargoHoldSize=64, cargoHold=["Cannabis", "Maple Syrup", "Kindness"]>
+CargoShip<name="JS CPP", launchedFrom="Port Metro Vancouver", latitude=42.364506, longitude=-71.038887, topSpeed=100.00 knots, passengersCompacity=500, passengers=["Barack Obama", "Bruno Mars", "Jason Momoa"]>
+Both ships will arrive at (lat: 0, long: 0) in 74.65 hours.

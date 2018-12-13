@@ -1,25 +1,21 @@
-
-import debug.Debugger;
 import lab05.*;
+import debug.Debugger;
 
 public class Main {
 	public static void main(String[] args) {
+		Student students[] = new Student[40];
 		Debugger debugger = new Debugger(Debugger.OFF);
-		Student students[] = Util.readFile(UI.askForFile());		
+		int studentsLength = Util.readFile(UI.askForFile(), students);
 
-		if (students == null) {
-			System.out.println("An error occured loading the students scores.");
-		} else {
-			for (Student student : students)
-				debugger.info(student.toString());
+			for (int i = 0; i < studentsLength; i++)
+				debugger.info(students[i]);
 			
-			Statistics s = new Statistics(students);
+			Statistics s = new Statistics(students, studentsLength);
 			debugger.info("Statistics::toString (before calculations)");
 			debugger.info(s.toString());
 			s.calculate();
 			debugger.info("Statistics::toString (after calculations)");
 			debugger.info(s.toString());
 			s.report();
-		}
 	}
 }

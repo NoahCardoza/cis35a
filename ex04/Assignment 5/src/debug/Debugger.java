@@ -14,13 +14,13 @@ public class Debugger {
 		LEVEL = level;
 	}
 	
-	public void log(int level, String message) {
+	public void log(int level, Object out) {
 		if (LEVEL >= level)
-			System.out.println(message);
+			System.out.println(out);
 	}
 	
-	public void info(String message) {
-		log(INFO, "INFO: " + message);
+	public void info(Object out) {
+		log(INFO, "INFO: " + out.toString());
 	}
 	
 	public void setLevel(int level) {

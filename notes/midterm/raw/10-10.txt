@@ -1,0 +1,395 @@
+Algorithms 
+Discussions - online - 10% of your grade.
+
+sorting - 
+https://docs.google.com/spreadsheets/d/1jzPFvW2CGD86nL2xIit4joJh5EiFbU3nlKSE6c-t3BQ/edit#gid=1650066143
+
+searching
+Sequential and Binary Search
+
+class definition (blueprint) --> object
+
+ class anatomy (internal structure)
+ --instance variables
+ --static variables
+ --constructors
+ --instance methods
+ ----getters/setters
+ ----business methods
+ ----print()
+ --static methods
+
+
+**********************************************************
+Java coding standards
+writing a class - 
+Class name should start with an upper case letter.
+class should always be public
+Must include a default constructor.
+All instance variables (properties) must be private
+All methods must be public.
+Class anatomy - instance variables, static variables, constructors, getter and setters, instance methods, static methods.
+Driver should be in its own class.
+Every class must have a print method that can print the values of instance variables.
+**********************************************************
+
+When to use "this"?
+this refers to instance variable - when local and instance variables are named the same in overlapping scope then this is used to refer to instance variable.
+
+Association example **********************************************
+
+public class Cellphone {
+	private String brand;
+
+	Cellphone() { //default constructor
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public void start(Battery b) { // association
+		int charge = b.getCharge();
+		b.setCharge(--charge);
+	}
+}
+
+public class Battery {
+	private int charge;
+
+	public Battery() {
+		charge = 100;
+	}
+
+	public int getCharge() {
+		return charge;
+	}
+
+	public void setCharge(int charge) {
+		this.charge = charge;
+	}
+
+	
+	public String toString() {
+		return "Battery [charge=" + charge + "]";
+	}
+	
+	
+}
+
+
+public class Driver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Cellphone nokia = new Cellphone();
+		Battery duracell = new Battery();
+		System.out.printf("Duracell charge is %s\n",(duracell));
+		nokia.setBrand("Nokia");
+		nokia.start(duracell);
+		System.out.printf("Duracell charge is %s\n",(duracell));
+	}
+
+}
+
+*****************************************************************
+
+//static variable
+
+private static int count;
+//shared with all objects
+//one memory location in static memory area(method area)
+//loaded at the start of the program - when main() is loaded.
+
+why are variables not made public - global - value can be changed from anywhere - prone to creating stealth bugs - so avoid.
+Lab 2 - part 1 -
+
+
+
+Part 1 - Personal Information Class
+
+Design a class that hold the personal data: name, address, age and phone number. Write appropriate methods (constructor, getters ad setters. Demonstrate the class by writing a program that creates three instances of the class. You can populate information in each object using Scanner class. Please do not use any personal information as data in the project. 
+
+Submit a class diagram, test runs and code (.java file) with your submission. Please create a zip file and submit a single attachment for part 1.
+
+//project - lab2a 
+//name of the class - PersonalInformation
+//4 instance variables
+//2 constructors - default, 4 parameters
+//getter/setters
+//print method.
+
+//Driver class
+//main()
+
+//write a method to do user input public void readInput(Person p)
+//use Scanner object to read data from keyboard.
+//call setter method in Person to set the values read from the user to the Person object.
+
+public static void main(String [] args)
+{
+Person p = new Person();
+Driver d = new Driver();
+d.readInput(p);
+p.print();
+Person meghan = new Person(); 
+d.readInput(p);
+sally.print();
+Person harry = new Person(); 
+d.readInput(harry);
+harry.print();
+
+}
+
+
+//how to write a class?
+//how to make objects?
+//how to pass an object by reference?
+
+public class PersonalInformation {
+//personal data: name, address, age and phone number. 
+private String name; //data hiding - encapsulation
+private int age;
+private String address;
+private int phone;
+//constructors
+public PersonalInformation() { }
+public PersonalInformation(String name, int age, String address, int phone) {
+this.name = name;
+this.age = age;
+this.address = address;
+this.phone = phone;
+}
+//getter and setter
+public String getName() {
+return name;
+}
+public void setName(String name) {
+this.name = name;
+}
+public int getAge() {
+return age;
+}
+public void setAge(int age) {
+this.age = age;
+}
+public String getAddress() {
+return address;
+}
+public void setAddress(String address) {
+this.address = address;
+}
+public int getPhone() {
+return phone;
+}
+public void setPhone(int phone) {
+this.phone = phone;
+}
+public void print() {
+
+}
+}
+
+
+import java.util.*;
+public class Driver {
+private static Scanner a1 = new Scanner(System.in);
+public void input(PersonalInformation p) {
+String temp = null;
+System.out.printf("What is your name?");
+temp = a1.nextLine();
+p.setName(temp);
+//...
+}
+
+
+Association is implemented using pass by reference - Lab 2 part 2.
+
+Part 2 - Coin Toss Simulator
+Create a coin toss simulation program. The simulation program should toss coin randomly and track the count of heads or tails.
+You need to write a program that can perform following operations:
+
+a. Toss a coin randomly.
+b. Track the count of heads or tails.
+c. Display the results.
+
+Design and Test
+
+Let's decide what classes, methods and variables will be required in this task and their significance:
+java.util.Random to determine heads/tails 
+Write a class called Coin, Driver and Simulation.
+- Coin() - sideup - constructor (random decision to use head or tails)
+- decide on any other method needed.
+
+//there has to be another object that tosses coin.
+Simulation
+properties ..heads, and tails.
+methods 
+..Simulation()
+..void toss(Coin n)
+..printstats(Coin n) //print can call toss method 20 time sin a loop and then print # of times head or tails.
+
+********************Possible framework for lab 2 part 2**************************
+
+
+public class Coin {
+	private String sideUp;
+
+	public Coin() {
+		// use a random approach (pl. use google or stackoverflow
+		// for tossing the coin.
+	}
+
+	public void toss() {
+		// sets the value of sideup
+		//using the same logic in the Coin() default constructor.
+	}
+	
+
+	public String getsideUp() {
+
+		return sideUp;
+	}
+}
+
+
+public class Simulation {
+	public void toss(Coin c){
+		//Create a loop to toss the coin 20 times
+		//and count how many time we get heads or tails.
+		// - use the coin toss() and getSideUp().
+		//print output showing # of heads or tails
+	}
+}
+
+
+public class Driver {
+
+	public static void main(String[] args) {
+		//Create a Coin object.
+		//Create a Simulation Object
+		//Call the toss method in Simulation
+		//Write 2 to 3 test cases for this
+		//Create a quarter, dime and nickel object 
+		//toss each coin 20 times.
+		Coin quarter = new Coin();
+		Coin dime = new Coin();
+		Coin nickel = new Coin();
+		Simulation s1 = new Simulation();
+		s1.toss(quarter);
+		s1.toss(dime);
+		s1.toss(nickel);
+	}
+
+}
+
+************************************************************************************
+
+Array of Objects - 
+Array of objects - 
+int x[] = new int[5];
+
+public class Human {
+private int age;
+Human() {
+}
+Human(int age) {
+this.age = age;
+}
+public int getAge() {
+return age;
+}
+public void setAge(int age) {
+this.age = age;
+}
+public void print(){
+System.out.printf("Age=%d\n",age);
+}
+}
+******************************************************************************
+Human cis35a[] = new Human[47]; //capacity.
+//issue
+cis35a[0].setAge(21); //null pointer exception
+
+Exception - is a issue that occurs in runtime and is recoverable (for the most part).
+//fix
+cis35a[0] = new Human();
+cis35a[0].setAge(21); //works.
+
+import java.util.Arrays;
+
+public class Human {
+private int age;
+private Emotion e; //containment
+Human() {
+e = new Emotion(); //Human contains Emotion
+}
+
+Human(int age) {
+this.age = age;
+}
+
+public int getAge() {
+return age;
+}
+
+public void setAge(int age) {
+this.age = age;
+}
+
+private Emotion getE() {
+return e;
+}
+
+private void setE(Emotion e) {
+this.e = e;
+}
+
+public void print(){
+System.out.printf("Age=%d\n",age);
+e.print();
+}
+
+}
+
+public class Emotion {
+private String name;
+private int intensity;
+
+public Emotion() {
+} // nirvana
+
+public void print() {
+System.out.printf("emotion name=%s\n", name);
+System.out.printf("emotion intensity=%d\n", intensity);
+}
+}
+public class Driver {
+
+public static void main(String[] args) {
+Human [] cis35a = new Human[47];
+
+for(int i=0;i<cis35a.length;i++)
+cis35a[i]=new Human();
+
+for(int i=0;i<cis35a.length;i++)
+cis35a[i].setAge(21);
+
+for(int i=0;i<cis35a.length;i++)
+{
+System.out.printf("Person#=%d-->", i);
+cis35a[i].print();
+}
+}
+
+}
+
+public class Emotion {
+private String name;
+private int intensty;
+}
+

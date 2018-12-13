@@ -1,0 +1,348 @@
+Process - Arrenn - 
+What is a process?
+Used in OS - that represents a program running on a machine - 
+Chrome, MS Word, notepad,  - 
+ Machine instruction - get loaded.
+ CPU - 
+ PC - Program Counter - keeps track of which instruction was last executed.
+ Memory - 4 parts - CS, DS, Stack and Heap
+ Registers - used for caching data for computing.
+
+
+Using Scanner - program
+http://youtu.be/LmfuO1xow3A <-- Video for Scanner.
+
+import java.util.Scanner;
+import java.io.*; // Access System.out
+public class NumericInput
+{
+ public static void main(String[] args)
+ {
+ // Declarations
+ Scanner in = new Scanner(System.in);
+ int integer;
+ long longInteger;
+ float realNumber;
+ double doubleReal;
+ String string1;
+ String string2;
+ 
+ // Prompts
+ System.out.println("Enter an integer, a long integer, " + "a floating-point ");
+ System.out.println("number, another floating-point number, " + "and a string.");
+ System.out.println("Separate each with a blank or return."); 
+ 
+// Read in values 
+integer = in.nextInt();
+longInteger = in.nextLong();
+realNumber = in.nextFloat();
+doubleReal = in.nextDouble();
+string1 = in.nextLine();
+System.out.println("Now enter another value.");
+string2 = in.next();
+ 
+System.out.println("Here is what you entered: ");
+System.out.println(integer + " " + longInteger + " " + realNumber + " " + doubleReal + " " + string1 + " and " + string2);
+}
+}
+
+Output
+System.out.print("a" + app + "b") //should not be used in this course.
+Pl. use System.out.printf(""); //formatted output.
+
+ Don't make me think - book steve krugg - free pdf.
+
+System.out.prinf("formatting part",variables);
+int sal = 100000;
+System.out.prinf("My salary is %4d",sal);
+
+ % - start of data formatting (a value or a variable)
+ [width] - number of chars to use for displaying value - minimum width
+ [.] generally used for float and doubles
+ [precision] - to state # of decimals to print.
+ datatype - c for char, f for float or double, s for string and d for integer.
+
+float sal2 = 144423.567890f;
+System.out.prinf("My salary is %15.2f",sal2);
+
+ My salary is _ _ _ _ _ _ 1 4 4 4 2 3 . 5 6 
+
+String x = "Sukhjit Singh Bob";
+System.out.prinf("My name is %17s",x);
+
+ My name is Sukhjit Singh Bob
+
+Pl. assume minimum width for it to be useful.
+printf video - http://youtu.be/kxfWJ8N6sh8
+
+Thinking in Java - 
+https://sophia.javeriana.edu.co/~cbustaca/docencia/POO-2016-01/documentos/Thinking_in_Java_4th_edition.pdf
+
+May not work all the time - pl google thinking in java bruce eckel pdf
+
+decision making
+ if(cond) //relational and logical operators
+ {
+ actions;
+ }
+ else
+ {
+
+ }
+
+ < > >= <= != == (relational)
+ ! || && (logical)
+
+ if ((money > 0) && (car == true))
+ 	System.out.printf("%s\n","Gamble");
+ else
+	System.out.printf("%s\n","Stay @ home");
+
+
+ int score = 85;
+ if(score > 90)
+	 System.out.printf("%c\n",'A');
+ else if(score > 80)
+	 System.out.printf("%c\n",'B');
+ else if(score > 70)
+	 System.out.printf("%c\n",'C');
+ else if(score > 60)
+	 System.out.printf("%c\n",'D');
+ else
+	 System.out.printf("%c\n",'F');
+//comment
+
+
+int x = 100;
+switch(x)
+{
+ case 1: a1; 
+ case 2: a2; break;
+ case 3: a3; a4;
+ case 6: 
+ default: a6;
+}
+
+Loops - 
+ //execute action for the first time and then do a condition check. (post test loop)
+ int x = 0;
+ do {
+    x = in.nextInt(); //if input -5 ?
+ } while (x < 0);
+
+ while(x > 55) //pre-test loop
+ {
+ 
+ }
+
+ for(int i=5;i<10;i++)
+ {
+ 	System.out.printf("%d",i);
+ }
+ for(int i=5;i<10;)
+ {
+ 	System.out.printf("%d",i);
+        i = i + 3;
+ }
+
+divide and conq. - working with methods in java.
+public class Driver {
+ public static void print(int sc) { //one copy - 
+ 	System.out.printf("Value=%d\n",sc);
+ }
+ public static void set(int sc) {
+ 	sc = 75;
+ }
+ public static void main(String[] args) {
+ 	 int y = 5;
+	 print(y);
+	 set(y);
+	 print(y);
+ }
+
+}
+All primitive types are passed by value.
+All objects are passed by reference
+
+Lab 1 - has 2 parts - cislabs05@gmail.com
+CIS 35a - Lab 1 - Bob Singh
+//create a sep. project for each part.
+//test your code - running and showing the output.
+
+- and + test cases 
+submission - 
+lab1
+  p1
+	.java (test runs in comments)
+	or put testruns in .txt file
+  p2
+	.java (test runs in comments)
+	or put testruns in .txt file
+pl. be sure to add a small desc. of whatever you are testing.
+
+
+Testruns - 
+<comment 1>
+screen dump of the console from eclipse
+
+<comment 2>
+screen dump of the console from eclipse
+
+....
+
+Array - is an object 
+ int x[] = new int[5]; 0, 1, 2, 3, 4
+ int [] x = new int[5];
+ //int x[] <-- indicate type of object reference(with name) 
+ int [5] - create datatype of an object
+ Array - contiguous memory for storage 
+ fixed in size 
+ supports same datatype
+ not resizable - immutable
+ //dimension - way of organizing data - cs terms
+
+ int scores[][] = new int[45][8];
+ for(int i=0;i<45;i++)
+	//index value 0 in 2nd dim represent studentid
+ 	for(int j=1;j<8;j++)
+ 		score[i][j] = 0;
+ 
+ 
+ int collegescore[][][][] = new int[2][2000][50][8];
+ //1st - # of colleges - 2
+ //2nd - # of faculty - 2000
+ //3rd - avg num of students - 50
+ //4th - # of assignment - 8
+ collegescore[0][0][0][0] = 10;
+
+Ragged arrays - 
+	int x[][] = new int[3][];
+	x[0] = new int[2];
+	x[1] = new int[1];
+	x[2] = new int[4];
+Array code 
+import java.util.Arrays;
+
+public class ArraysFun {
+ static void print(int x1[], int goofy){
+ //x1[3] = 55;
+ //goofy = 15;
+ for(int i=0;i<x1.length;i++)
+ System.out.printf("%d ",x1[i]);
+ System.out.println("");
+ //System.out.printf("\ngoofy=%d\n", goofy);
+ }
+ public static void main(String[] args) {
+ int x[] = {1, 2, -6, 7, 8, 10};
+ int goof =0;//= 10;
+ print(x, goof);
+ //System.out.printf("x[3]=%d goof=%d\n", x[3],goof);
+ //Arrays.sort(x);
+ print(x, goof);
+ System.out.printf("location is = %d", (Arrays.binarySearch(x, -6)));
+ }
+
+}
+
+Algorithms 
+sorting - 
+https://docs.google.com/spreadsheets/d/1jzPFvW2CGD86nL2xIit4joJh5EiFbU3nlKSE6c-t3BQ/edit#gid=1650066143
+
+searching
+Sequential and Binary Search
+
+Working with Objects - 
+Running Notes
+What is an object?
+OOD --> OOP
+Design before construction
+When you design - create a class
+From a class --> object
+Understanding design --> learning how to build a class.
+ blueprint --> house
+ class --> object
+
+ class definition (blueprint) --> object
+
+ class anatomy (internal structure)
+ --instance variables
+ --static variables
+ --constructors
+ --instance methods
+ ----getters/setters
+ ----business methods
+ ----print()
+ --static methods
+
+instance (object) - data for an object (local or static)
+ unique memory location for each object, unique value for each object. 
+static - shared between objects - one memory location - when the value changes, applies to all objects.
+
+constructors - methods that initialize an object.
+syn - has same name as class name
+must always create a default constructor - 0, 0.0, 0.0f, null, false 
+constructor can be overloaded - same name(class name so it will be) but different method signatures (first line of the method)
+no return type
+
+static methods - are shared methods - can be called without creating an object.
+
+instance methods - create an object to call instance methods.
+
+----getters/setters
+ some control on how to set and get values.
+----business methods
+ withdraw - deposit
+----print() - print the values of all instance variables <--debugging purposes.
+
+
+state of an object --> for a given object printing values of all instance variables - object state.
+
+creating an object
+ design the class --> objects
+ design the class 
+ behavior
+
+
+Design a Human - 
+
+public class Human {
+ private boolean happy; //encapsulating
+
+ Human() {
+ } // default constructor
+ 
+ public Human(boolean happy) {
+ this.happy = happy;
+ }
+
+ public boolean isHappy() {
+ return happy;
+ }
+
+ public void setHappy(boolean happy) {
+ this.happy = happy;
+ }
+
+ public String print() {
+ return "Human [happy=" + happy + "]";
+ }
+
+ public void eating(){
+ System.out.println("Eating three samosas");
+ this.setHappy(true);
+ }
+ 
+ public static void main(String[] args) {
+ Human sally = new Human();
+ System.out.println("Sally = " + (sally.print()) );
+ sally.eating();
+ System.out.println("Sally = " + (sally.print()) );
+ }
+
+}
+
+
+
+
+
+

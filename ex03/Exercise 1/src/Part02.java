@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class Part02 {
 	}
 	
 	private static void modifyInterestRate(double rate) {
-		System.out.printf("Set Interest Rate = %%.2f:\n", rate * 100);
+		System.out.printf("Set Interest Rate = %%%.2f:\n", rate * 100);
 		SpecialSavings.modifyInterestRate(rate);
 		print();
 	}
@@ -39,19 +40,19 @@ public class Part02 {
 		accounts = new ArrayList<SpecialSavings>();
 		
 		for (int n = 1; n < 6; n++) {
-			accounts.add(new SpecialSavings("Saver " + n, n * 2000)); 
+			accounts.add(new SpecialSavings());
+			SpecialSavings acc = accounts.get(n - 1);
+			acc.setName("Saver " + n);
+			acc.deposit(n * 2000);
 		}
 		
-		modifyInterestRate(0.05);
+		modifyInterestRate(0.12);
 		calculateMonthlyInterest();
-		withdraw(500);
-		modifyInterestRate(0.01);
+		withdraw(1000);
+		modifyInterestRate(0.03);
 		calculateMonthlyInterest();
-		deposit(1000);
+		deposit(10000);
 		calculateMonthlyInterest();
-		
-		SpecialSavings.modifyInterestRate(0.03);
-
 	}
 
 }

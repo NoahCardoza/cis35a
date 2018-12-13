@@ -1,0 +1,12 @@
+static: one copy, shared, loaded at the start of the program
+printf formatting: %[flag][minimum width].[precision]datatype
+
+Binary Stuff
+    The value of 1101012 in base 10 is: :: 53
+    The equivalent of 10010 (base 10) is what in base 2? :: 1100100
+    The base 10 representation of the largest signed value that can be stored using only 6 bits is: 63
+    The base 10 representation of the largest unsigned value that can be stored using only 6 bits is: 126
+
+
+Notes:
+  Ragged Array: An array whose children have different lengths

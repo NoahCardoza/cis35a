@@ -1,0 +1,429 @@
+Review - Process - 
+Decision making and looping constructs
+Methods
+Lab 1 - 
+
+Algorithms 
+sorting - 
+https://docs.google.com/spreadsheets/d/1jzPFvW2CGD86nL2xIit4joJh5EiFbU3nlKSE6c-t3BQ/edit#gid=1650066143
+
+selection sort optimizations - 
+[x] a. In a single iteration - find the lowest and highest value --> to reduce iteration by half (potentially?)
+to be thought through.
+b. Using the history? to be discovered.
+c. Divide the array in half - deal with each half and the merge ?
+
+searching
+Sequential and Binary Search
+
+Working with Objects - 
+Running Notes
+What is an object? - writing code.
+OOD --> OOP
+Design before construction
+When you design - create a class
+From a class --> object
+Understanding design --> learning how to build a class.
+ blueprint --> house
+ class --> object
+
+ class definition (blueprint) --> object
+
+ class anatomy (internal structure)
+ --instance variables<--
+ --static variables
+ --constructors<--
+ --instance methods<--
+ ----getters/setters<--
+ ----business methods<--
+ ----print()<--
+ --static methods
+
+instance (object) - data for an object (local or static)
+ unique memory location for each object, unique value for each object. 
+static - shared between objects - one memory location - when the value changes, applies to all objects.
+
+constructors - methods that initialize an object.
+syn - has same name as class name
+must always create a default constructor - 0, 0.0, 0.0f, null, false 
+constructor can be overloaded - same name(class name so it will be) but different method signatures (first line of the method)
+no return type
+
+static methods - are shared methods - can be called without creating an object.
+
+instance methods - create an object to call instance methods.
+
+----getters/setters
+ some control on how to set and get values.
+----business methods
+ withdraw - deposit
+----print() - print the values of all instance variables <--debugging purposes.
+
+
+state of an object --> for a given object printing values of all instance variables - object state.
+
+creating an object
+ design the class --> objects
+ design the class 
+   behavior --> properties associated with behavior) - methods that will change the properties (action)
+	properties are private - methods are public.
+
+
+Design a Human - 
+
+public class Human {
+ private boolean happy; //encapsulating
+
+ Human() {
+ } // default constructor
+ 
+ public Human(boolean happy) {
+ this.happy = happy;
+ }
+
+ public boolean isHappy() {
+ return happy;
+ }
+
+ public void setHappy(boolean happy) {
+ this.happy = happy;
+ }
+
+ public String print() {
+ return "Human [happy=" + happy + "]";
+ }
+
+ public void eating(){
+ System.out.println("Eating three samosas");
+ this.setHappy(true);
+ }
+ 
+ public static void main(String[] args) {
+ Human sally = new Human();
+ System.out.println("Sally = " + (sally.print()) );
+ sally.eating();
+ System.out.println("Sally = " + (sally.print()) );
+ }
+
+}
+Right click in text editor where you want to insert code - 
+ Source --> Generate Constructor from fields
+
+
+*************************************************************************************************************
+Creating Objects
+Object is a self-contained independent entity.
+It has properties and method.
+Methods alter the value of the properties (instance variables)
+It determines the behavior of an object.
+
+Being self-contained makes me independent. (learning behavior)
+
+
+An object is created from a class.
+Class is the blueprint.
+
+public class Apple {
+//properties and methods. 
+String color;
+String taste;
+String location;
+
+void rotten() {
+color = "brown";
+taste = "rotten apple taste";
+location = "trash";
+}
+}
+ - no constructor - no getter/setter, no print, properties are not private, 
+public class Driver {
+public static void main(String [] args)
+{
+Apple apple = new Apple(); 
+//default constructor. method that will initialize the instance variables to 0, 0.0f, 0.0, false or null (depending on the datatype) - has the same name as class name - no return type specified.
+}
+}
+**********************************************************
+Java coding standards
+writing a class - 
+Class name should start with an upper case letter.
+class should always be public
+Must include a default constructor.
+All instance variables (properties) must be private
+All methods must be public.
+Class anatomy - instance variables, static variables, constructors, getter and setters, instance methods, static methods.
+Driver should be in its own class.
+Every class must have a print method that can print the values of instance variables.
+**********************************************************
+
+
+
+static - 
+1. shared - variable or method
+	value is constant for n objects of a given class.
+2. loaded first and 
+3. one copy.
+
+10 static variables - 
+onground - notes I am typing, time, lab1, temp in a room, networkid, 
+online - number of eyes in human, weather in a city, cityname, instructor, college
+
+- getter/setter for static variables.
+
+When to use "this"?
+this refers to instance variable - when local and instance variables are named the same in overlapping scope then this is used to refer to instance variable.
+
+public class Apple {
+//properties 
+private String color; //instance variables - unique value in each object.
+//private means encapsulation - or data hiding
+private String taste;
+private String location;
+
+private static int count;
+
+//constructors
+public Apple() { count++; } //default constructor.
+public Apple(String color, String taste) { //2nd constructor - overloaded. - 
+//same name - different signature (# of parameters)
+this.color = color; //this - java keyword that refers to current object.
+this.taste = taste;
+count++;
+}
+//methods
+//getter and setter
+public String getColor() {
+return color;
+}
+public void setColor(String color) {
+this.color = color;
+}
+public String getTaste() {
+return taste;
+}
+public void setTaste(String taste) {
+this.taste = taste;
+}
+public String getLocation() {
+return location;
+}
+public void setLocation(String location) {
+this.location = location;
+}
+//instance methods
+public void rotten() {
+color = "brown";
+taste = "rotten apple taste";
+location = "trash";
+}
+public void print()
+{
+System.out.printf("Color=%s\n Taste=%s\n Location=%s\n",color, taste, location);
+System.out.printf("Count=%d",count);
+}
+}
+
+
+
+
+
+public class Driver {
+public static void main(String [] args)
+{
+Apple apple = new Apple();
+//apple - object reference (name of the object)
+//new - allocates memory based on Apple()
+//Apple() call to a method to initialize properties - constructor.
+//apple.color = "Red"; //can access properties in main() when properties are not private.
+apple.setColor("Red");
+apple.setLocation("Fresno");
+apple.setTaste("appleish");
+apple.print();
+//apple.location = "Fresno";
+//apple.taste = "appleish";
+Apple apple1 = new Apple("green","sour");
+apple1.print();
+Apple apple2 = new Apple();
+apple2.print();
+}
+}
+
+//static variable
+
+private static int count;
+//shared with all objects
+//one memory location in static memory area(method area)
+//loaded at the start of the program - when main() is loaded.
+
+why are variables not made public - global - value can be changed from anywhere - prone to creating stealth bugs - so avoid.
+
+Lab 2 - part 1 -
+
+Part 1 - Personal Information Class
+lab 2 part 1 - 
+create a class called PersInfo - 
+add properties, constructors, getter/setter and a print method.
+create a new class called Driver
+	method - 
+import - scanner class
+public class Driver {
+	public static void readPersonalInfo(PersInfo p1){
+			//after reading a value using Scanner 
+			p1.setName(val);
+	}
+	public static void main(String args[])
+	{
+		PersInfo a1 = new PersInfo();
+		Driver.readPersonalInfo(a1); //a1 is passed by reference - association
+		a1.print();
+		//primitive types are passed by value.
+		//objects are passed by reference.
+	}	
+}
+Design a class that hold the personal data: name, address, age and phone number. Write appropriate methods (constructor, getters ad setters. Demonstrate the class by writing a program that creates three instances of the class. You can populate information in each object using Scanner class. Please do not use any personal information as data in the project. 
+
+Submit a class diagram, test runs and code (.java file) with your submission. Please create a zip file and submit a single attachment for part 1.
+
+//project - lab2a 
+//name of the class - PersonalInformation
+//4 instance variables
+//2 constructors - default, 4 parameters
+//getter/setters
+//print method.
+
+//Driver class
+//main()
+
+//write a method to do user input public void readInput(Person p)
+//use Scanner object to read data from keyboard.
+//call setter method in Person to set the values read from the user to the Person object.
+
+public static void main(String [] args)
+{
+Person p = new Person();
+Driver d = new Driver();
+d.readInput(p);
+p.print();
+Person sally = new Person(); 
+d.readInput(p);
+sally.print();
+Person harry = new Person(); 
+d.readInput(harry);
+harry.print();
+
+}
+
+
+//how to write a class?
+//how to make objects?
+//how to pass an object by reference?
+
+public class PersonalInformation {
+//personal data: name, address, age and phone number. 
+private String name; //data hiding - encapsulation
+private int age;
+private String address;
+private int phone;
+//constructors
+public PersonalInformation() { }
+public PersonalInformation(String name, int age, String address, int phone) {
+this.name = name;
+this.age = age;
+this.address = address;
+this.phone = phone;
+}
+//getter and setter
+public String getName() {
+return name;
+}
+public void setName(String name) {
+this.name = name;
+}
+public int getAge() {
+return age;
+}
+public void setAge(int age) {
+this.age = age;
+}
+public String getAddress() {
+return address;
+}
+public void setAddress(String address) {
+this.address = address;
+}
+public int getPhone() {
+return phone;
+}
+public void setPhone(int phone) {
+this.phone = phone;
+}
+public void print() {
+
+}
+}
+
+
+import java.util.*;
+public class Driver {
+public void input(PersonalInformation p) {
+Scanner a1 = new Scanner(System.in);
+String temp = null;
+System.out.printf("What is your name?");
+temp = a1.nextLine();
+p.setName(temp);
+//...
+}
+
+public static void main(String[] args) {
+Driver d = new Driver();
+PersonalInformation bob = new PersonalInformation();
+Driver.input(bob);
+bob.print();
+//two more PersonalInformation objects.
+}
+
+}
+
+Association is implemented using pass by reference - Lab 2 part 2.
+
+
+
+
+Part 2 - Coin Toss Simulator
+Create a coin toss simulation program. The simulation program should toss coin randomly and track the count of heads or tails.
+You need to write a program that can perform following operations:
+
+a. Toss a coin randomly.
+
+b. Track the count of heads or tails.
+
+c. Display the results.
+
+Design and Test
+
+Let's decide what classes, methods and variables will be required in this task and their significance:
+java.util.Random to determine heads/tails 
+Write a class called Coin, Driver and Simulation.
+- Coin() - sideup - constructor (random decision to use head or tails)
+- decide on any other method needed.
+
+//there has to be another object that tosses coin.
+Simulation
+properties ..heads, and tails.
+methods 
+..Simulation()
+..void toss(Coin n)
+..printstats(Coin n) //print can call toss method 20 time sin a loop and then print # of times head or tails.
+
+Driver
+main() method
+..that instantiates - Coin and Simulation
+//driver might look like this
+Simulation s1 = new Simulation();
+Coin qtr = new Coin();
+Coin dime = new Coin();
+s1.printstats(qtr); //qtr coin is associated to s1.
+s1.printstat(dime);
+
+
+

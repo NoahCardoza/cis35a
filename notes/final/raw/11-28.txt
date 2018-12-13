@@ -1,0 +1,185 @@
+Running Notes - 
+1. Abstract classes - not concrete - 
+	regular class - create an instance
+	abstract class - cannot instantiate 
+
+	reasons -
+	 - reusability - enforcing a contact - 
+		declared an abstract method in parent class
+		child class is required to implement it
+	  same signature in child class as parent declaration
+		--> enable polymorphism (across classes in same family)	
+
+public abstract class Animal { //abstract .. Cannot be instantiated.
+	private String name;
+	public Animal(String name)
+	{
+		setName(name);
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public abstract void sound(); //declare a method. //leave implementation for child class. //enforces a contract to enable polymorphism.
+}
+public class Cat extends Animal {
+	public Cat(String name)	{ super(name); }
+	public void sound() {
+		System.out.println("purr...");		
+	}}
+public class Dog extends Animal {
+	public Dog(String name) { super(name); }
+	public void sound() {
+		System.out.println("woof...");
+	}}
+public class Bird extends Animal {
+	public Bird(String name) { super(name); }
+	public void sound() {
+		System.out.println("tweet tweet...");		
+	}}
+public class Program3 {
+	public static void main(String[] args) {
+		Animal animal;
+		Cat cat = new Cat("Garfield");
+		Bird bird = new Bird("Tweety");
+		Dog dog = new Dog("Odie");
+		animal = cat;
+		System.out.println("Name: " + animal.getName());
+		animal.sound();
+		System.out.println();
+		animal = bird;
+		System.out.println("Name: " + animal.getName());
+		animal.sound();
+		System.out.println();
+		animal = dog;
+		System.out.println("Name: " + animal.getName());
+		animal.sound();
+		System.out.println();
+	}
+}
+2. Interfaces
+ - acts as glue between two disparate complex systems.
+ - enable polymorphism across classes in different families.
+ - way to create API - expose complex functionality in a simple way.
+
+	(Human) Car Dashboard (Engine)
+
+//A simple Interface
+//---------------------------------------------------------------------------------
+interface Act { //what?
+  void act();
+}
+
+class Actor1 implements Act {
+  public void act() {
+    System.out.println("To be, or not to be");
+  }
+}
+
+class Actor2 implements Act {
+  public void act() {
+    System.out.println("Wherefore art thou Romeo?");
+  }
+}
+
+public class TryOut {
+  public static void main(String args[]) {
+    Actor1 hamlet = new Actor1();
+    Actor2 juliet = new Actor2();
+    tryout(hamlet);
+    tryout(juliet);
+  }
+
+  private static void tryout(Act actor) {
+    actor.act();
+  }
+}
+
+public abstract B {
+
+}
+//assumption - C, D and E are interfaces
+public class A extends B implements C, D, E, Serializable {
+
+}
+
+an API -  a programming interfaces - 
+Serializable is an empty interface.
+A a = new A();
+//how to serialize
+ObjectOutputStream a1 = new ObjectOutputStream
+		(new FileOutputStream(a.ser));
+a1.writeObject(a);
+
+Deserialization
+ObjectInputStream a2 = new ObjectInputStream
+		(new FileInputStream(a.ser));
+A a = (A) a2.readObject();
+
+for req 2 - StudentGrade - 
+	/model/Student.java, Statistics.java, StudentGrade.java
+	StudentGrade contains Student and Statistics
+	
+	Do you have to create an array of StudentGrade object?
+	Serialize StudentGrade for each Student - 
+	15 student record in text file (for lab 5) - you must write 15 .ser files (serialized).
+	Each file shld contain - student lab scores and statistics for entire class.
+
+Requirement 1 - writing an custom exception - 
+fix one exception - 
+
+Req 3 - Discussion question 8.
+Req 3 - Implement abstract class and Interface (add this functionality in a package called adapter)
+
+/model - Student, Stat, StudentGrade
+/util - FileIO
+/exception - ???CustomException.java
+/adapter  - classes for Requirement 3.
+
+Create an API (A programming interface) to 
+
+Print student statistics
+Print score for a given student id
+
+You should create an Interface called StudentAPI in which two methods are declared for functionality (Req 3 - 1 and 2) stated above.
+
+public interface StudentAPI {
+	public void printstats();
+	public void printScores(int sid);
+}
+
+You should create a class StudentAPIImpl that would implement StudentAPI. Using methods from other classes, (Student.java, Statistics.java, StudentGrade.java, FileIO.java) implement the two methods in StudentAPI.
+
+public class StudentAPIImpl implement StudentAPI{
+	//create some instance variables as needed.
+	public StudentAPIImpl(String filename) { 
+		//whatever you did in main() for Lab 5.
+		//read text file --> create an array of students
+		//call high, low and avg functions.
+		//build StudentGrade array
+		//serialize each index value of StudentGrade as a sep. .ser file - using studentid.ser as filename
+	}
+	public void printstats() { } 
+	//call print() in Statistics class.
+	public void printScores(int sid) { 
+		//look in the directory where all .ser files live.
+		//read the file (deserialize using sid)
+		//call print() in StudentGrade.
+	}
+}
+
+Create a driver demonstrating the usage of the API. Put this in a separate driver called Driver3. java.  (Put this in driver package)
+
+	StudentAPI a1 = new StudentAPIImpl("data1.txt");
+	a1.printstats();
+	a1.printScores(1234);
+	
+
+
+
+
+
+
+

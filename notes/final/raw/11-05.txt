@@ -1,0 +1,142 @@
+Running Notes Nov. 5th 2018
+array - 
+3 staff members (manager or employee)
+3 day object for each employee or staff.
+total --> 7
+
+midterm - 
+reading and writing code.
+
+Scope - access to a variable or a method in a given class, package or parent/child class.
+private, protected, public and default.
+private - can only be accessed inside a class.
+protected - can be accessed inside a package and a class
+	    classes in different packages that have parent/child relationship
+public - can be accessed anywhere
+default - can be accessed in package level variable
+
+packages - a logical container in which you can put classes that are similar in functionality. 
+packages - subpackages - 
+	importing a package does not import subpackages. 
+
+update - coding standards - use packages starting lab 5.
+
+Lab 5 is like lab 3 - 
+fileio
+wrapper classes
+packages
+new revised coding standards
+
+Stud Q1 Q2 Q3 Q4 Q5
+1234 78 83 87 91 86
+2134 67 77 84 82 79
+1852 77 89 93 87 71
+
+High Score  78      89       93        91      86
+Low Score   67      77       84        82      71
+Average     73.4    83.0    88.2     86.6    78.6
+
+Objects - classes - 
+design - 
+packages
+model - Student.java, Statistics.java
+driver - Driver.java - for a main() - test your program
+util - FileIO - methods for reading the textfile - (FileIO.java can be used as a guide).
+
+class Student {
+ private int SID;
+ private int scores[] = new int[5];
+ //write public get and set methods for
+ //SID and scores
+ //add methods to print values of instance variables.
+}
+
+class Statistics
+{
+
+  private int [] lowscores = new int [5];
+  private int [] highscores = new int [5];
+  private float [] avgscores = new float [5];
+
+	public void findlow(Student [] a) {
+
+	/* This method will find the lowest score and store it in an   array names lowscores. */
+
+	}
+
+	public void findhigh(Student [] a) {
+
+	/* This method will find the highest score and store it in an     array names 	highscores. */
+
+	}
+
+	public void findavg(Student [] a) {
+
+	/* This method will find avg score for each quiz and store it in an array 	names avgscores. */
+
+	}
+
+//add method to print values of instance variables.
+
+}
+
+class FileIO{
+
+	Student [] readFile(String filename, Student [] stu) {
+	//Reads the file and builds student array.
+	//Open the file using FileReader Object.
+	//In a loop read a line using readLine method.
+	//Tokenize each line using StringTokenizer Object
+	//Each token is converted from String to Integer using parseInt method
+	//Value is then saved in the right property of Student Object.
+
+        }
+
+}
+
+//Putting it together in Driver class:
+//psuedocode - 
+     public static void main(String [] args) {
+
+		Student lab2 [] = new Student[40];
+
+		//Populate the student array
+
+		lab2 = Util.readFile("filename.txt", lab2);
+
+		Statistics statlab2 = new Statistics();
+		statlab2.findlow(lab2);
+		//add calls to findhigh and find average
+		//Print the data and statistics
+}
+
+ - website for Android Dev.
+https://sites.google.com/site/ecejavaandroid/
+
+
+
+
+public class A { x, y }
+public class B extends A { }
+
+B a1 = new B();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

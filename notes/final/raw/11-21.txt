@@ -1,0 +1,48 @@
+Agenda
+Lab 5 questions
+Complete Custom Exception Handling
+--done for 11/21.
+11/26 - 
+remove lab 6 and 7
+a new lab 67 - 
+include applying exception handling, interfaces and abstract classes.
+
+Extra Credit Lab - December 8th.
+
+Questions on Lab 5 - 
+Do I need to set a file path for specific location for lab 5?
+do so for testing and then leave it in. I will change it for testing.
+
+For lab5, can I pass the length along with the Student[] to Statistics?
+Otherwise, how should we be keeping track of the used space in the array?
+you create an array of size 40.
+you populate only the index elements based on # of records in file.
+ - 15 records - 15 student objects - last 25 object in student array are null values - that's what you test for.
+	if(stu[i]!=null)
+
+Do we have to pass the student array to the readFile function?I just have readFile create the array and return it.
+Yes please pass the reference into readFile().
+
+No UI class needed for this lab.
+Pl. make sure you test with different # of rows in file.
+
+What if rowcount > 40.
+Ignore anything > 40.
+
+Pl. do not create a new array based on # of records in file.
+Create an array of size 40.
+
+can i create a static variable to keep track of student count.
+
+for class diagram shld pkgs be included - if you can with simple dotted rectangles - not required.
+
+driver shld not be on the class diagram (unless driver has some methods pertaining to lab 5.
+
+Exception handling - 
+try/catch, finally
+Exception handling framework - 
+	an Exception object created when something goes wrong in runtime.
+
+Custom Exception - Self healing.
+
+Review project on custom exceptions.

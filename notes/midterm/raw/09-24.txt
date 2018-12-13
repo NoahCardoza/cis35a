@@ -1,0 +1,83 @@
+Java Programming - 
+--Sukhjit Singh - Bob Singh
+singhsukhjit@fhda.edu
+408 864 5566
+F51e - 4pm to 550pm (MW)
+or by appt.
+
+Requirements -->Design --> construction --> testing --> reflection to rubric
+
+
+base 2 to base 10
+1 1 1 <--number
+2 1 0
+1 * 2 (2) + 1 * 2(1) + 1* 2(0)
+4 + 2 + 1 = 7
+ 	q  r
+7/2 =   3  1
+3/2 =   1  1
+
+Compiled vs Interpreted
+Process for compiling - 
+editor - syn. checker - gram. checker --> linking (lib)
+-->.exe (binary)
+
+compiled vs interpreted
+
+native --> refers to matching the underlying architecture of hardware to the binary version of source code.
+
+Intel --> Machine Language
+
+C++ --> .exe
+
+C++/C is native  (porting)
+
+Java is portable
+HelloWorld.java (text) --> HelloWorld.class (binary) --> JRE/JVM --> converts .class file to native (line by line)
+
+SLOW <-- portability - 
+
+Structure of memory - 
+Array of indices - stores a byte of information in base 2.
+using the index you  an access the information.
+Heap - rest of the memory - dynamic memory allocation
+Stack - fixed size --
+  expressions (a=b+c;)
+  local variables 
+  passing args to functions
+CS - Code Segment
+DS - Data Segment
+
+how you deal with memory leaks?
+
+Cache - buffer that acts for temp storage in runtime.
+Registers - 
+
+JVM Engine - Java Virtual Machine
+Classpath - set of directories where .class files live.
+Class Loader - loads the class in memory. - creates a structure in memory (static memory) for the class for usage. - dynamic binding - 
+Bytecode verifier - portable instructions - verified.
+JIT - just in time compiler - improver performance.
+Bytecode Interpreter - converts .class --> native.
+Method area - static area
+User and System threads
+Thread - a task.
+Heap - rest of the memory - Dynamic memory allocation
+
+JNI - Java Native Interface - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

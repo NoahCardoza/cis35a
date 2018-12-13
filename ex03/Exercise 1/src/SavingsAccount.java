@@ -1,10 +1,13 @@
 
+
 public class SavingsAccount {
 	private static double annualInterestRate;
 	private static double monthlyInterestRate;
 	private double savingsBalance;
 	private String name;
 
+	SavingsAccount() {}
+	
 	SavingsAccount(String accountName, double startingBalance) {
 		savingsBalance = startingBalance;
 		name = accountName;
@@ -14,6 +17,15 @@ public class SavingsAccount {
 		annualInterestRate = value;
 		monthlyInterestRate = value / 12;
 	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	
 	public double getBalance() {
 		return savingsBalance;

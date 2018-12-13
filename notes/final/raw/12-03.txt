@@ -1,0 +1,368 @@
+Running Notes - Dec 3rd 2018
+Inner Classes
+
+Data Structure - Collections.
+
+Final - all subject matter used upto Lab 6.
+
+Inner classes - A class inside another class. 
+
+	public class A {
+		public class B {
+
+		}
+	}
+
+Code encapsulation - 
+Hiding code for B inside A.
+Class B can only be accessed and instantiated if A is instantiated.
+
+	A a = new A();
+	A.B b = a.new B();
+	
+	A.B b1 = new A().new B();
+
+Why create inner classes? - For conv.
+
+Creating an entire app in one class - writing a bunch of Inner classes - Swing Programming or Event oriented programming.
+
+Way to create clutter.
+
+//shared  - one copy - do not need an object to use a static variable - memory is allocated when the class is loaded.
+
+//Inner Classes
+//A simple example of a top level inner class
+//---------------------------------------------------------------------------------
+ventureloop, linkedin, indeed
+Type 1
+public class IC1 {
+  String msg = "Hello";
+  void doWork() {
+    Inner i = new Inner();
+    i.doTheWork();
+    msg = "Goodbye";
+    i.doTheWork();
+  }
+  class Inner {
+    public void doTheWork() {
+      // print member of enclosing class
+      System.out.println(msg);
+    }
+  }
+  public static void main(String[] av) {
+    IC1  p = new IC1 ();
+    p.doWork();
+  }
+}
+Hello
+Goodbye
+
+Swing API - Android Dev (events)
+
+//Static inner classes
+//---------------------------------------------------------------------------------
+
+//shared  - one copy - do not need an object to use a static variable - memory is allocated when the class is loaded.
+
+public class IC2 {
+  String msg = "Hello";
+  static class Inner { 
+    public void doTheWork() {
+      // print member of enclosing class
+      System.out.println(msg);
+    }
+  }
+  public static void main(String[] av) {
+    IC2.Inner  p = new IC2.Inner();
+    p.dTheoWork();
+  }
+}
+
+
+//Local Inner Classes
+//---------------------------------------------------------------------------------
+public class IC3 {
+  String msg = "Hello";
+  void doWork() {
+      int j = 6;
+  	class Inner {
+	    public void doTheWork() {
+	      // print member of enclosing class
+	      System.out.println(msg);
+	    }
+	}
+    Inner i = new Inner();
+    i.doTheWork();
+    msg = "Goodbye";
+    i.doTheWork();
+  }
+  public static void main(String[] av) {
+    IC3  p = new IC3();
+    p.doWork();
+  }
+}
+
+//Anonymous inner Class
+//---------------------------------------------------------------------------------
+import java.awt.event.*;
+import javax.swing.*;
+class CloseableFrame extends JFrame
+{  public CloseableFrame()
+   {  setTitle("CloseableFrame");
+      setSize(300, 200);
+      addWindowListener(new WindowAdapter()
+         {  public void windowClosing(WindowEvent e)
+            {  System.exit(0);
+            }
+         } );
+   }
+}
+public class CloseableTest
+{  public static void main(String[] args)
+   {  JFrame frame = new CloseableFrame();
+      frame.setVisible(true);  
+   }
+}
+
+public class A { 
+	int x(int a, int b) { }
+}
+
+public class B {
+	int y(A a) { }
+}
+
+public class Driver {
+	public static void main(String [] args)
+	{
+		//A a1 = new A();
+		B b1 = new B();
+		b1.y(new A() {
+			int x(int a, int b) { //begin
+
+			} //end 
+		});
+	}
+}
+
+
+//Another useful example of using top level inner classes
+//---------------------------------------------------------------------------------
+public class Parcel1 {
+  class Contents {
+    private int i = 11;
+
+    public int value() {
+      return i;
+    }
+  }
+
+  class Destination {
+    private String label;
+
+    Destination(String whereTo) {
+      label = whereTo;
+    }
+
+    String readLabel() {
+      return label;
+    }
+  }
+
+  // Using inner classes looks just like
+  // using any other class, within Parcel1:
+  public void ship(String dest) {
+    Contents c = new Contents();
+    Destination d = new Destination(dest);
+    System.out.println(d.readLabel());
+  }
+
+  public static void main(String[] args) {
+    Parcel1 p = new Parcel1();
+    p.ship("Tanzania");
+  }
+}
+
+//Nesting Nesting Nesting Inner classes
+//---------------------------------------------------------------------------------
+public class MultiNestingAccess { //class containment
+  public static void main(String[] args) {
+    MNA mna = new MNA();
+    MNA.A mnaa = mna.new A();
+    MNA.A.B mnaab = mnaa.new B();
+    mnaab.h();
+  }
+} 
+class MNA {
+  private void f() {
+  }
+
+  class A {
+    private void g() {
+    }
+
+    public class B {
+      void h() {
+        g();
+        f();
+      }
+    }
+  }
+}
+
+//Returning a reference to a inner class
+//---------------------------------------------------------------------------------
+public class Parcel2 {
+  class Contents {
+    private int i = 11;
+
+    public int value() {
+      return i;
+    }
+  }
+
+  class Destination {
+    private String label;
+
+    Destination(String whereTo) {
+      label = whereTo;
+    }
+
+    String readLabel() {
+      return label;
+    }
+  }
+
+  public Destination to(String s) {
+    return new Destination(s);
+  }
+
+  public Contents cont() {
+    return new Contents();
+  }
+
+  public void ship(String dest) {
+    Contents c = cont();
+    Destination d = to(dest);
+    System.out.println(d.readLabel());
+  }
+
+  public static void main(String[] args) {
+    Parcel2 p = new Parcel2();
+    p.ship("Tanzania");
+    Parcel2 q = new Parcel2();
+    // Defining references to inner classes:
+    Parcel2.Contents c = q.cont();
+    Parcel2.Destination d = q.to("Borneo");
+  }
+}
+
+Data Structures - 
+Collections - already implemented in an API.
+import java.util - 
+How do you choose a collection? or a data structure?
+Given a set of requirements - how do you make a decision for choosing a data structure - Hashing
+understanding requirements - 
+1. What are we building - contacts - 
+2. Operation type -
+		rate of Creating versus Searching (read)
+		velocity of change - 
+		relative usage
+		Create Read Update and Delete (CRUD)
+3. Sorted or Unsorted
+	Sorted - search faster (update and delete) - binary (log(2)n) - for e.g. 100 - 7 :: 1000 - 11 - 100000000
+	Unsorted - slow - hashing (search is fast) - (1)
+	
+	rate of insert is high and search is high - Hashing - 
+		not sorting the data and search is faster.
+
+system - 
+contiguous v.s. discontiguous storage - 
+array - contiguous memory usage - index value - refer to starting address to access entire structure using an index value.
+	increasing the size - move entire structure to part of memory if memory cannot be extended at existing location.
+linkedlist - discontiguous memory usage 
+	allocate a node anywhere - overhead is in maint of links
+	single, double or circular
+	
+Algorithms - 
+Hashing -
+	Mod function - 
+		int x[] = new int [6];
+		17%6 --> [5]
+		12%6 --> [0]
+		11%6 --> [5] <-- coll.  (make a linked list)
+
+	avoid coll - using lot of memory - and we have plenty.
+	hash function - black box - 
+		size, value being inserted and occupancy rate
+		(6, 11, .75)
+		.75 - 75% of 6 - or 4 (waste 2 spaces) to avoid coll.
+	
+		ebay.com - listings db.	
+		(100,000,000, 11, .75)
+Hashing overhead - in Java
+	extra memory with occupancy rate
+	extra memory to conjecture a large enough size for the future.
+	size is input for hash function - size cannot be changed and if changed - rehash. (processing)
+	overhead of hashtable.
+	table that contains hashed value (key and loc pair)
+	created to rebuild hashing data structure.
+
+Trees
+ - Red Black - binary tree - sorted(balanced) - balanced (with upto n levels) for 2 (pow) n items.
+balanced tree - at any level - number of nodes on left and right side (within a diff of 1).
+1,000,000 - log(2)1,000,000.
+	
+
+Map - using default location
+C# 34000
+Java 79000
+C++ 40000
+Python - 70000
+
+key and value pair
+key is unique - name of the language.
+
+Data Science - Andrew Ng - Coursera - youtube
+COTS - 
+
+
+
+Arrays
+List
+ ArrayList
+ LinkedList - create a List, addnode(), removenode(), insertnode(), searchnode(), countnodes() etc.
+		Create Read Update and Delete (CRUD)
+Set
+ HashSet
+ TreeSet
+Map
+ HashMap
+ TreeMap
+
+LinkedHashMap
+LinkedHashSet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

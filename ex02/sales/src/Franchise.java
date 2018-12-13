@@ -6,6 +6,11 @@ public class Franchise {
 		stores = new Store[num];
 	}
 
+	public void preCalculate() {
+		for (Store store : stores)
+			store.analyzeResults();
+	}
+
 	public Store getStores(int i) {
 		return stores[i];
 	}

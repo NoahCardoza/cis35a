@@ -9,9 +9,9 @@ public class Main {
 		cargoShip.christen("Perl Harbor", 49.288826, -123.111122);
 		cruiseShip.christen("Port Metro Vancouver", 42.364506, -71.038887);
 		
-		cruiseShip.addPassengers("Barack Obama");
-		cruiseShip.addPassengers("Bruno Mars");
-		cruiseShip.addPassengers("Jason Momoa");
+		cruiseShip.addPassenger("Barack Obama");
+		cruiseShip.addPassenger("Bruno Mars");
+		cruiseShip.addPassenger("Jason Momoa");
 		
 		cargoShip.packCargo("Cannabis");
 		cargoShip.packCargo("Maple Syrup");

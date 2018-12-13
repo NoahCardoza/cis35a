@@ -1,9 +1,18 @@
+Bash:
+> wc -l test-data/*
+      15 test-data/scores00
+       4 test-data/scores01
+     949 test-data/scores02
+      30 test-data/scores03
+      40 test-data/scores04
+
+Tests:
 ->  Test 00 (DEBUG: OFF)
 
 Where is your file located: test-data/scores00
-High Score:    89      98      91      78      60
-Low Score :    0       0       0       0       0
-Average   :    6.7     10.6    12      15.6    6
+High Score:		100		100		100		90		80
+Low Score :		0		7		0		32		10
+Average   :		46.2	42.3	70.5	75.7	49.7
 
 ->  Test 01 (DEBUG: OFF)
 
@@ -15,23 +24,23 @@ Average   :    74      83      88      86.7    78.7
 ->  Test 02 (DEBUG: OFF)
 
 Where is your file located: test-data/scores02
-High Score:    99      99      99      99      99
-Low Score :    1       1       1       1       1
-Average   :    49.4    50.1    50.9    50.1    51.7
+High Score:		98		98		99		99		98
+Low Score :		4		12		1		5		5
+Average   :		45.5	63.7	48.6	48.5	49.3
 
 ->  Test 03 (DEBUG: OFF)
 
 Where is your file located: test-data/scores03
-High Score:    99      85      70      81      83
-Low Score :    0       0       0       0       0
-Average   :    14.2    8.4     8.3     10.9    9.5
+High Score:		99      85      70      81      83
+Low Score :    	0       0       0       0       0
+Average   :    	14.2    8.4     8.3     10.9    9.5
 
 ->  Test 04 (DEBUG: OFF)
 
 Where is your file located: test-data/scores04
-High Score:    98      98      99      99      98
-Low Score :    4       12      1       5       5
-Average   :    46.4    63.7    48.8    47.7    48.5
+High Score:    	98      98      99      99      98
+Low Score :    	4       12      1       5       5
+Average   :    	46.4    63.7    48.8    47.7    48.5
 
 ->  Test 05 (DEBUG: INFO) :: Testing Student::toString,
     Statistics::toString, and the basic functionality

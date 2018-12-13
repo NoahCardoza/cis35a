@@ -1,0 +1,53 @@
+Agenda
+Review
+About JVM
+Hello World
+Variables
+Expressions
+Input/Output
+Comments
+Decision Making
+Looping 
+Methods
+
+
+Variables - 
+Literals - 
+0 - int
+0.0 - double
+0.0f - float
+1L - long
+'a'
+"abcd"
+true - boolean
+
+identifier
+name - 
+a-z, A-Z, 0-9, _
+socSecNum
+
+x, y, z
+
+datatype - 
+boolean(1 bit), byte(1), short(2), int(4), long(8), float(4), double(8), char(2)
+
+int sal = 4444, x=0, y=0;
+
+int i;
+
+operators - 
++ - = / * % **
+/ * %
++ -
+=
+
+++ --
+int a = 5;
+int b = 5
+a++; //6
+++b; //6
+System.out.println((a++)+" "+(++b));
+//6 7
+System.out.println((a)+" "+(b));
+//7 7
+

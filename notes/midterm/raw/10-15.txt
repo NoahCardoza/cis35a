@@ -1,0 +1,165 @@
+Algorithms 
+Association - passing an object by reference.
+Input/Output - printf
+Drawing class diagrams.
+
+Agenda
+Binary Search
+Containment - 
+Working with arrays
+How to create an array of arrays
+Lab 3
+
+Binary Search - 
+Assume an entire array is sorted -
+
+int x [] = { 1, 2, 5, 6, 11, 45, 88};
+int find = 34;
+Apply binary search to seach find in array x.
+
+Divide an array into two parts - size of array / 2.
+loc = size of array / 2 
+Compare value of "find" at "loc" (in the middle of array)
+if values matches then value is at location - "loc"
+if not found - look on left or right side of array.
+
+Containment and Array of Objects - 
+Containment - creating an instance of a class inside another class.
+
+public class Human {
+private int age;
+private Emotion e; // containment
+
+Human() {
+e = new Emotion(); // Human contains Emotion
+}
+
+Human(int age) {
+this.age = age;
+e = new Emotion();
+}
+
+public int getAge() {
+return age;
+}
+
+public void setAge(int age) {
+this.age = age;
+}
+
+public Emotion getE() {
+return e;
+}
+
+public void setE(Emotion e) {
+this.e = e;
+}
+
+public void print() {
+System.out.printf("Age=%d\n", age);
+e.print();
+}
+
+}
+
+public class Emotion {
+private String name;
+private int intensity;
+
+public Emotion() {
+} // nirvana
+
+public String getName() {
+return name;
+}
+
+public void setName(String name) {
+this.name = name;
+}
+
+public int getIntensity() {
+return intensity;
+}
+
+public void setIntensity(int intensity) {
+this.intensity = intensity;
+}
+
+public void print() {
+System.out.printf("emotion name=%s\n", name);
+System.out.printf("emotion intensity=%d\n", intensity);
+}
+}
+
+public class Driver {
+
+public static void main(String[] args) {
+Human a = new Human(24);
+a.print();
+Emotion e = a.getE(); //access Emotion object inside Human
+e.setName("Happy");
+e.setIntensity(100);
+a.print();
+}
+
+}
+
+
+
+
+
+Array of Objects -
+
+
+public class Driver {
+
+public static void main(String[] args) {
+Human [] x = new Human[2];
+//assign object to each index location in an array of objects
+//to avoid Null Pointer Exception
+for(int i=0;i<x.length;i++)
+x[i] = new Human();
+x[0].setAge(29);
+x[0].print();
+}
+
+}
+
+
+******************************************************************************
+Reviewing 
+..array of objects - 
+..containment -
+
+public class Driver {
+public static void main(String[] args) {
+Pocket p = new Pocket();
+Pocket p1 = new Pocket(5);
+}
+}
+
+public class Pocket {
+Pen[] pen;
+
+Pocket() {
+}
+
+Pocket(int count) {
+pen = new Pen[count]; //to avoid NPE
+for (int i = 0; i < pen.length; i++)
+pen[i] = new Pen();
+}
+}
+
+
+public class WritingMech {
+
+}
+
+public class Pen {
+String color;
+int duration;
+WritingMech m1 = new WritingMech();
+// constructor, getter, setter and print()
+//Pen contains WritingMech
+}

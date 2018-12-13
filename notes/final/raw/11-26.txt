@@ -1,0 +1,378 @@
+Running Notes - Nov 26th 2018
+
+1. Creating a custom exception handler - 
+Refer to CreateProblem.java, FixProblem.java and CatchAndFix.java
+extend Exception class - 
+2. Serialization - ObjectInputStream and ObjectOutputStream (with FileInputStream and FileOutputStream..
+
+ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("employee.dat"));
+         out.writeObject(staff);
+         out.close();
+
+ObjectInputStream in =  new ObjectInputStream(new FileInputStream("employee.dat"));
+Employee[] newStaff = (Employee[]) in.readObject();
+
+Don't forget to watch the lecture on Serialization.
+
+Abstract classes - 
+
+	A class that cannot be instantiated.
+	 - code resuability - 
+	public abstract class Shape {
+		public abstract int area(); //abstract methods - declaring (What)
+		//- require implementation in child class.
+		
+	}
+REQUIRE IMPLEMENTATION OF AN ABSTRACT METHOD BY CHILD CLASS.
+"enforcing a contract"
+	//Shape p1 = new Shape(); //error - abstract classes cannot be instantiated.
+
+	public class Rectangle extends Shape {
+		//other code.
+
+
+		public int area() { } //if this is not written - syn. error (how)
+				//"how" is implemented in method definition.
+				//method signature must match in child class.
+	}
+
+	public class Circle extends Shape {
+		//other code.
+
+
+		public int area() { } //if this is not written - syn. error
+	}
+	public class Square extends Shape {
+		//other code.
+
+
+		public int area() { } //if this is not written - syn. error
+	}
+
+
+//main 
+	Shape a1[] = new Shape[3];
+	a1[0] = new Circle();
+	a1[1] = new Rectangle();
+	a1[2] = new Square();
+	for(int i=0;i<a1.length;i++)
+		a1[i].area();
+
+
+//Abstract Classes
+
+abstract class Time {
+        public abstract int getMinutes();
+    }
+    
+    class Days extends Time {
+        private int days;
+        public int getMinutes() {
+            return days * 24 * 60;
+        }
+    }
+    
+    class HoursMinutes extends Time {
+        private int hours;
+        private int minutes;
+        public int getMinutes() {
+            return hours * 60 + minutes;
+        }
+    }
+
+
+//Representing an abstract idea
+---------------------------------
+public abstract class Animal { //abstract .. Cannot be instantiated.
+	private String name;
+	public Animal(String name)
+	{
+		setName(name);
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public abstract void sound(); //declare a method. //leave implementation for child class. //enforces a contract to enable polymorphism.
+}
+public class Cat extends Animal {
+	public Cat(String name)	{ super(name); }
+	public void sound() {
+		System.out.println("purr...");		
+	}}
+public class Dog extends Animal {
+	public Dog(String name) { super(name); }
+	public void sound() {
+		System.out.println("woof...");
+	}}
+public class Bird extends Animal {
+	public Bird(String name) { super(name); }
+	public void sound() {
+		System.out.println("tweet tweet...");		
+	}}
+public class Program3 {
+	public static void main(String[] args) {
+		Animal animal;
+		Cat cat = new Cat("Garfield");
+		Bird bird = new Bird("Tweety");
+		Dog dog = new Dog("Odie");
+		animal = cat;
+		System.out.println("Name: " + animal.getName());
+		animal.sound();
+		System.out.println();
+		animal = bird;
+		System.out.println("Name: " + animal.getName());
+		animal.sound();
+		System.out.println();
+		animal = dog;
+		System.out.println("Name: " + animal.getName());
+		animal.sound();
+		System.out.println();
+	}
+}
+-------------------------------------
+
+Data Abstraction
+----------------
+public abstract class Shape {
+	public int height;
+	public int width;
+	public abstract double area();
+}
+public class Rectangle extends Shape {
+	public Rectangle(int height, int width)
+	{
+		this.height = height;
+		this.width = width;
+	}
+	public double area() {
+		return height * width;
+	}
+}
+public class Triangle extends Shape {
+	public Triangle(int height, int width)
+	{
+		this.height = height;
+		this.width = width;
+	}
+	public double area() {
+		return 0.5 * height * width;
+	}
+}
+public class Program4 {
+	public static void main(String[] args) {
+		Shape shape;
+		Rectangle rectangle = new Rectangle(2, 4);
+		Triangle triangle = new Triangle(2, 4);
+		shape = rectangle;
+		System.out.println("Area of rectangle: " + shape.area()); 
+		shape = triangle;
+		System.out.println("Area of triangle: " + shape.area()); 
+	}
+}
+
+Interfaces - 
+ - an entry point into a complex system.
+	Dashboard - 
+		speed
+		fuel(gas)
+		oil
+		..
+
+	A complex system simple to use - 
+devices - that have an interface
+	phone - screen
+	computer - mouse, keyboard and screen
+	apps - 
+	human face - 
+	finger prints
+	genetic code
+	networth
+	door to a building
+	google
+	
+It's a system between two complex system - driving simplicity for mutual understanding.
+
+	public interface
+
+	
+//Abstract Classes
+//---------------------------------------------------------------------------------
+abstract class Time {
+        public abstract int getMinutes();
+    }
+    
+    class Days extends Time {
+        private int days;
+        public int getMinutes() {
+            return days * 24 * 60;
+        }
+    }
+    
+    class HoursMinutes extends Time {
+        private int hours;
+        private int minutes;
+        public int getMinutes() {
+            return hours * 60 + minutes;
+        }
+    }
+
+
+//A really really simple interface
+//---------------------------------------------------------------------------------
+import java.util.Random;
+public interface RandVals {
+  Random rand = new Random();
+  int randomInt = rand.nextInt(10);
+  long randomLong = rand.nextLong() * 10;
+  float randomFloat = rand.nextLong() * 10;
+  double randomDouble = rand.nextDouble() * 10;
+}
+
+public class Myclass implements RandVals { }
+
+//Creating an interface vs. an abstract class
+//---------------------------------------------------------------------------------
+   public interface Time { //declare constants or methods. no method definition
+        int getMinutes(); //method declaration
+    }
+    
+    class Days implements Time, Serializable {
+        private final int days;
+        public Days(int days) {
+            this.days = days;
+        }
+        public int getMinutes() {
+            return days * 24 * 60;
+        }
+    }
+    
+    class HoursMinutes implements Time {
+        private final int hours;
+        private final int minutes;
+        public HoursMinutes(int hours, int minutes) {
+            this.hours = hours;
+            this.minutes = minutes;
+        }
+        public int getMinutes() {
+            return hours * 60 + minutes;
+        }
+    }
+    
+    public class AIDemo1 {
+        public static void main(String args[]) {
+            Time t1 = new Days(10);
+            Time t2 = new HoursMinutes(15, 59);
+            System.out.println(t1.getMinutes());
+            System.out.println(t2.getMinutes());
+        }
+    }
+
+
+
+//A simple Interface
+//---------------------------------------------------------------------------------
+interface Act {
+  void act();
+}
+
+class Actor1 implements Act {
+  public void act() {
+    System.out.println("To be, or not to be");
+  }
+}
+
+class Actor2 implements Act {
+  public void act() {
+    System.out.println("Wherefore art thou Romeo?");
+  }
+}
+
+public class TryOut {
+  public static void main(String args[]) {
+    Actor1 hamlet = new Actor1();
+    Actor2 juliet = new Actor2();
+    tryout(hamlet);
+    tryout(juliet);
+  }
+
+  private static void tryout(Act actor) {
+    actor.act();
+  }
+}
+
+//
+
+import facebook.*;
+import facebook.timeline.*;
+
+public class MyFaceBookApp {
+	
+	public MyFaceBookApp () {
+		Timeline a1 = getTimeLine("bobsingh@gmail.com", "12345678");
+	}
+	
+	public void writePost() {
+		a1.writePost("Words of wisdom from Bob - Think wisely");
+	}
+
+}
+
+//Facebook uses interfaces to give limited access to functionality in its complex system. (API) - A programming interface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,6 +4,8 @@ public class Ship {
 	private String name = "";
 	private String launchedFrom = "";
 	
+	Ship() {}
+	
 	Ship(String shipName, double speed){
 		name = shipName;
 		topSpeed = speed;
@@ -55,5 +57,33 @@ public class Ship {
 	    distance = Math.pow(distance, 2) + Math.pow(height, 2);
 
 	    return Math.sqrt(distance);
+	}
+	
+	public double getTopSpeed() {
+		return topSpeed;
+	}
+
+	public void setTopSpeed(double topSpeed) {
+		this.topSpeed = topSpeed;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public double getLongitude() {
+		return longitude;
+	}
+
+	public String getLaunchedFrom() {
+		return launchedFrom;
 	}
 }

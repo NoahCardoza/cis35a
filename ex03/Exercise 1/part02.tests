@@ -1,6 +1,68 @@
--> Only one test since there us nothing for the user to input
+-> Test 01
 
-Set Interest Rate = %.2f:
+:: Code
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Part02 {
+	
+	static List<SpecialSavings> accounts;
+	
+	private static void calculateMonthlyInterest() {
+		System.out.println("Calculating Monthly Interest:");
+		accounts.forEach(SpecialSavings::calculateMonthlyInterest);
+		print();
+	}
+	
+	private static void modifyInterestRate(double rate) {
+		System.out.printf("Set Interest Rate = %%%.2f:\n", rate * 100);
+		SpecialSavings.modifyInterestRate(rate);
+		print();
+	}
+	
+	private static void withdraw(double ammount) {
+		System.out.printf("Withdrawing $%.2f from all accounts:\n", ammount);
+		accounts.forEach(a -> a.withdraw(ammount));
+		print();
+	}
+	
+	private static void deposit(double ammount) {
+		System.out.printf("Depositing $%.2f from all accounts:\n", ammount);
+		accounts.forEach(a -> a.deposit(ammount));
+		print();
+	}
+	
+	private static void print() {
+		accounts.forEach(SpecialSavings::print);
+	}
+
+	public static void main(String[] args) {
+		
+		
+		accounts = new ArrayList<SpecialSavings>();
+		
+		for (int n = 1; n < 6; n++) {
+			accounts.add(new SpecialSavings("Saver " + n, n * 2000)); 
+		}
+		
+		modifyInterestRate(0.05);
+		calculateMonthlyInterest();
+		withdraw(500);
+		modifyInterestRate(0.01);
+		calculateMonthlyInterest();
+		deposit(1000);
+		calculateMonthlyInterest();
+		
+		SpecialSavings.modifyInterestRate(0.03);
+
+	}
+
+}
+
+:: Output
+
+Set Interest Rate = %5.00:
 SpecialSavings<owner="Saver 1", savingsBalance=2000.00, annualInterestRate=0.05, monthlyInterestRate=0.0042>
 SpecialSavings<owner="Saver 2", savingsBalance=4000.00, annualInterestRate=0.05, monthlyInterestRate=0.0042>
 SpecialSavings<owner="Saver 3", savingsBalance=6000.00, annualInterestRate=0.05, monthlyInterestRate=0.0042>
@@ -18,7 +80,7 @@ SpecialSavings<owner="Saver 2", savingsBalance=3516.67, annualInterestRate=0.05,
 SpecialSavings<owner="Saver 3", savingsBalance=5525.00, annualInterestRate=0.05, monthlyInterestRate=0.0042>
 SpecialSavings<owner="Saver 4", savingsBalance=7533.33, annualInterestRate=0.05, monthlyInterestRate=0.0042>
 SpecialSavings<owner="Saver 5", savingsBalance=9541.67, annualInterestRate=0.05, monthlyInterestRate=0.0042>
-Set Interest Rate = %.2f:
+Set Interest Rate = %1.00:
 SpecialSavings<owner="Saver 1", savingsBalance=1508.33, annualInterestRate=0.01, monthlyInterestRate=0.0008>
 SpecialSavings<owner="Saver 2", savingsBalance=3516.67, annualInterestRate=0.01, monthlyInterestRate=0.0008>
 SpecialSavings<owner="Saver 3", savingsBalance=5525.00, annualInterestRate=0.01, monthlyInterestRate=0.0008>
@@ -42,3 +104,111 @@ SpecialSavings<owner="Saver 2", savingsBalance=4523.36, annualInterestRate=0.01,
 SpecialSavings<owner="Saver 3", savingsBalance=6535.05, annualInterestRate=0.01, monthlyInterestRate=0.0008>
 SpecialSavings<owner="Saver 4", savingsBalance=8546.73, annualInterestRate=0.01, monthlyInterestRate=0.0008>
 SpecialSavings<owner="Saver 5", savingsBalance=11604.58, annualInterestRate=0.01, monthlyInterestRate=0.0008>
+
+-> Test 02
+
+:: Code
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Part02 {
+	
+	static List<SpecialSavings> accounts;
+	
+	private static void calculateMonthlyInterest() {
+		System.out.println("Calculating Monthly Interest:");
+		accounts.forEach(SpecialSavings::calculateMonthlyInterest);
+		print();
+	}
+	
+	private static void modifyInterestRate(double rate) {
+		System.out.printf("Set Interest Rate = %%%.2f:\n", rate * 100);
+		SpecialSavings.modifyInterestRate(rate);
+		print();
+	}
+	
+	private static void withdraw(double ammount) {
+		System.out.printf("Withdrawing $%.2f from all accounts:\n", ammount);
+		accounts.forEach(a -> a.withdraw(ammount));
+		print();
+	}
+	
+	private static void deposit(double ammount) {
+		System.out.printf("Depositing $%.2f from all accounts:\n", ammount);
+		accounts.forEach(a -> a.deposit(ammount));
+		print();
+	}
+	
+	private static void print() {
+		accounts.forEach(SpecialSavings::print);
+	}
+
+	public static void main(String[] args) {
+		
+		
+		accounts = new ArrayList<SpecialSavings>();
+		
+		for (int n = 1; n < 6; n++) {
+			accounts.add(new SpecialSavings());
+			SpecialSavings acc = accounts.get(n - 1);
+			acc.setName("Saver " + n);
+			acc.deposit(n * 2000);
+		}
+		
+		modifyInterestRate(0.12);
+		calculateMonthlyInterest();
+		withdraw(1000);
+		modifyInterestRate(0.03);
+		calculateMonthlyInterest();
+		deposit(10000);
+		calculateMonthlyInterest();
+	}
+
+}
+
+
+:: Output
+
+Set Interest Rate = %12.00:
+SpecialSavings<owner="Saver 1", savingsBalance=2000.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+SpecialSavings<owner="Saver 2", savingsBalance=4000.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+SpecialSavings<owner="Saver 3", savingsBalance=6000.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+SpecialSavings<owner="Saver 4", savingsBalance=8000.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+SpecialSavings<owner="Saver 5", savingsBalance=10000.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+Calculating Monthly Interest:
+SpecialSavings<owner="Saver 1", savingsBalance=2020.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+SpecialSavings<owner="Saver 2", savingsBalance=4040.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+SpecialSavings<owner="Saver 3", savingsBalance=6060.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+SpecialSavings<owner="Saver 4", savingsBalance=8080.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+SpecialSavings<owner="Saver 5", savingsBalance=10100.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+Withdrawing $1000.00 from all accounts:
+SpecialSavings<owner="Saver 1", savingsBalance=1020.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+SpecialSavings<owner="Saver 2", savingsBalance=3040.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+SpecialSavings<owner="Saver 3", savingsBalance=5060.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+SpecialSavings<owner="Saver 4", savingsBalance=7080.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+SpecialSavings<owner="Saver 5", savingsBalance=9100.00, annualInterestRate=0.12, monthlyInterestRate=0.0100>
+Set Interest Rate = %3.00:
+SpecialSavings<owner="Saver 1", savingsBalance=1020.00, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 2", savingsBalance=3040.00, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 3", savingsBalance=5060.00, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 4", savingsBalance=7080.00, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 5", savingsBalance=9100.00, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+Calculating Monthly Interest:
+SpecialSavings<owner="Saver 1", savingsBalance=1022.55, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 2", savingsBalance=3047.60, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 3", savingsBalance=5072.65, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 4", savingsBalance=7097.70, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 5", savingsBalance=9122.75, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+Depositing $10000.00 from all accounts:
+SpecialSavings<owner="Saver 1", savingsBalance=11022.55, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 2", savingsBalance=13047.60, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 3", savingsBalance=15072.65, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 4", savingsBalance=17097.70, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 5", savingsBalance=19122.75, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+Calculating Monthly Interest:
+SpecialSavings<owner="Saver 1", savingsBalance=12124.80, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 2", savingsBalance=14352.36, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 3", savingsBalance=16579.92, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 4", savingsBalance=18807.47, annualInterestRate=0.03, monthlyInterestRate=0.0025>
+SpecialSavings<owner="Saver 5", savingsBalance=21035.03, annualInterestRate=0.03, monthlyInterestRate=0.0025>

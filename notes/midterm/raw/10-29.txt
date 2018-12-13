@@ -1,0 +1,196 @@
+Running Notes - 
+Oct 29th 2018 - 
+Review - 
+  topics covered - 
+	inheritance and polymorphism
+	String Buffers, Strings, Wrapper classes
+	lab 4 - what is expected (inherit. and polymorphism).
+
+  questions on Lab 3 - 
+- make sure you watch - oct 15th and 17th.
+- fileio - write comments in the class.
+- writing code in Store.java - few functions to compute data - declaring instance variables to compute values - 
+User friendly Interface - UI.java.
+Testing your code - submit test cases with descriptions - class diagrams - 
+ 
+don't forget discussions - 
+
+pl. review your submission with the grading criteria for the lab.
+
+Midterm - 
+ - open book and notes (its not a static variable)
+ - in class
+ - 1.5 hours
+ - no electronic devices - print your notes.
+ - pen and paper 
+ - topics - list shown in class notes before midterm. Scope and packages will not be included.
+ - what kind of questions
+   - read code and output the answer
+   - write code for requirements.
+Sample midterm - 
+
+Lab 3 - 
+Is UI class contained in Driver - No. 
+Should be a sep. class.
+How will main method work with UI.
+It can instantiate UI.java
+
+FileIO - 
+ - Basics of OS, JVM and working with Files
+ - Working with text files - 4 classes (FileReader, FileWriter, BufferedReader and BufferedWriter
+ - Working with binary files - 4 classes (FileInputStream, FileOutputStream, BufferedInputStream, BufferedOutputStream)
+ - Filters - DataInputStream and DataOutputStream
+ - Serialization - ObjectInputStream and ObjectOutputStream.
+
+File IO Basics
+	- File (bytes stored in perm. location in FileSystem)
+	- FileSystem - DB of file information (part of the OS)
+	- Stream - sequence of bytes (text or binary) for transferring infomation between two software components (file and a program)
+	- Buffer - small memory location allocated for temp storage - to make IO faster.
+	Moving Truck - People - 3 bedroom house.
+	- filter - data format conversion (language filter) - text to binary 
+	- object files - persists an object in memory to disk.
+			Store.java - make an object - write to disk.
+			Object persistence - Serialization
+
+		state of an object - properties of an object - values at a given time. - persisting an object state.
+
+import java.io.*; - to use the functionality for IO.
+
+Exceptions - 
+	Problems that occur in software in runtime.
+
+	time of code writing - use an if statement - to prevent an issue.
+
+Two types of exception - 
+	known to JVM - checked - try/catch clause.
+		try {
+
+		} 
+		catch (Exception e)
+		{
+
+		}
+		catch (Exceptioname2 e)
+		{
+
+		}
+		catch (Exceptioname3 e)
+		{
+
+		}
+		finally {
+			//reset
+		}
+
+catch block --> used for documenting and fixing the issue.
+	 
+	new to JVM - unchecked
+
+File IO API - A programming Interface - 
+A set of classes providing access to complex functionality written by someone else.
+
+import java.io.*;
+Working with text files 
+- ReadSource.java
+import java.io.*;
+
+public class ReadSource {
+    public static void main(String[] arguments) {
+        try {
+            FileReader file = new
+                FileReader("ReadSource.java");
+            BufferedReader buff = new
+                BufferedReader(file);
+            boolean eof = false;
+            while (!eof) {
+                String line = buff.readLine();
+                if (line == null)
+                   eof = true;
+                else
+                    System.out.println(line);
+            }
+            buff.close();
+        } catch (IOException e) {
+            System.out.println("Error -- " + e.toString());
+        }
+    }
+}
+
+//readLine returns null if eof otherwise return the String read.
+
+How does readLine know about EOF?
+	How does a function reading data determine eof?
+
+	 - is it the content of a file? - null or -1 
+
+	hint - its information in the filesystem and location at which data is being read.
+
+Fully qualified path  - z:\dirname\subdirname\filename
+
+/dirname/subdirname/filename
+
+Working with binary files - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

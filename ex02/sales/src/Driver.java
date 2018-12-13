@@ -5,6 +5,7 @@ public class Driver {
 		FileIO file = new FileIO("/Users/noahcardoza/projects/java/cis35a/ex02/sales/src/Salesdat.txt");
 		Franchise franchise = file.readData();
 
+		franchise.preCalculate();
 		// run the UI loop
 		new UI(franchise).loop();
 		

@@ -6,6 +6,10 @@ public class CargoShip extends Ship {
 	private List<String> cargoHold;
 	private int cargoHoldSize;
 	
+	CargoShip() {
+		cargoHold = new ArrayList<String>();
+	}
+
 	CargoShip(String name, int cargoHoldSize) {
 		super(name, 20 /* knots */);
 		cargoHold = new ArrayList<String>();
@@ -37,5 +41,12 @@ public class CargoShip extends Ship {
 	public void print() {
 		System.out.printf("CargoShip<%s, cargoHoldSize=%d, cargoHold=%s>\n", formatPrintableString(), cargoHoldSize, Utils.formatArray(cargoHold));
 	}
+	
+	public int getCargoHoldSize() {
+		return cargoHoldSize;
+	}
 
+	public void setCargoHoldSize(int cargoHoldSize) {
+		this.cargoHoldSize = cargoHoldSize;
+	}
 }

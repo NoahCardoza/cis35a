@@ -1,5 +1,8 @@
 
+
 public class SpecialSavings extends SavingsAccount {
+	SpecialSavings() {}
+	
 	SpecialSavings(String accountName, double startingBalance) {
 		super(accountName, startingBalance);
 	}
